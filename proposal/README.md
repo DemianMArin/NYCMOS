@@ -4,6 +4,8 @@ NYCMos design is part of **track C**. Our chip aims to help understand and visua
 The chip will allow for a user to choose between heterodyne, homodyne and sliding IF downconversion, with the option of being able 
 to see the intermediate signal before arriving at baseband.
 
+![Block Diagram](./nycmos_blockdiagram.png)
+
 # Team Members
 Lei Chen, Charbel El Haddad, Demian Marin
 
