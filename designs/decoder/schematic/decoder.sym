@@ -1,0 +1,52 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 -150 -30 -130 -30 {}
+L 4 -150 -10 -130 -10 {}
+L 4 130 -40 150 -40 {}
+L 4 -150 10 -130 10 {}
+L 4 130 -20 150 -20 {}
+L 4 130 0 150 0 {}
+L 4 -150 30 -130 30 {}
+L 4 130 40 150 40 {}
+L 4 130 60 150 60 {}
+L 4 130 20 150 20 {}
+L 7 0 -110 0 -90 {}
+L 7 0 90 0 110 {}
+B 5 -2.5 -112.5 2.5 -107.5 {name=VDD dir=inout}
+B 5 -2.5 107.5 2.5 112.5 {name=VSS dir=inout}
+B 5 -152.5 -32.5 -147.5 -27.5 {name=EN dir=in}
+B 5 -152.5 -12.5 -147.5 -7.5 {name=sel_2 dir=in}
+B 5 147.5 -42.5 152.5 -37.5 {name=mixer_2_en dir=out}
+B 5 -152.5 7.5 -147.5 12.5 {name=sel_1 dir=in}
+B 5 147.5 -22.5 152.5 -17.5 {name=mixer_3_en dir=out}
+B 5 147.5 -2.5 152.5 2.5 {name=mixer_4_en dir=out}
+B 5 -152.5 27.5 -147.5 32.5 {name=sel_0 dir=in}
+B 5 147.5 37.5 152.5 42.5 {name=divider_2_en dir=out}
+B 5 147.5 57.5 152.5 62.5 {name=divider_3_en dir=out}
+B 5 147.5 17.5 152.5 22.5 {name=mixer_1_divider_1_en
+ dir=out}
+P 4 5 130 -90 -130 -90 -130 90 130 90 130 -90 {}
+T {@symname} -49.5 -6 0 0 0.3 0.3 {}
+T {@name} 135 -102 0 0 0.2 0.2 {}
+T {VDD} 15 -84 0 1 0.2 0.2 {}
+T {VSS} -5 84 2 1 0.2 0.2 {}
+T {EN} -125 -34 0 0 0.2 0.2 {}
+T {sel_2} -125 -14 0 0 0.2 0.2 {}
+T {mixer_2_en} 125 -44 0 1 0.2 0.2 {}
+T {sel_1} -125 6 0 0 0.2 0.2 {}
+T {mixer_3_en} 125 -24 0 1 0.2 0.2 {}
+T {mixer_4_en} 125 -4 0 1 0.2 0.2 {}
+T {sel_0} -125 26 0 0 0.2 0.2 {}
+T {divider_2_en} 125 36 0 1 0.2 0.2 {}
+T {divider_3_en} 125 56 0 1 0.2 0.2 {}
+T {mixer_1_divider_1_en
+} 125 16 0 1 0.2 0.2 {}
