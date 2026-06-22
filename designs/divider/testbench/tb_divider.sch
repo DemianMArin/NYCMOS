@@ -34,6 +34,13 @@ N 120 -320 120 -210 {lab=0}
 N 230 -220 230 -170 {lab=0}
 N 230 -350 230 -280 {lab=V_EN}
 N 230 -350 400 -350 {lab=V_EN}
+N 520 -300 550 -300 {lab=0}
+N 520 -460 550 -460 {lab=VDD}
+N 680 -420 700 -420 {lab=V_LOI_p}
+N 670 -420 680 -420 {lab=V_LOI_p}
+N 670 -400 700 -400 {lab=V_LOI_n}
+N 670 -360 700 -360 {lab=V_LOQ_p}
+N 670 -340 700 -340 {lab=V_LOQ_n}
 C {title.sym} 160 -30 0 0 {name=LO Divider author="Lei Chen"}
 C {code_shown.sym} 0 60 0 0 {name=MODELS only_toplevel=true  
 format="tcleval( @value )" 
@@ -124,4 +131,4 @@ C {vsource.sym} 350 -250 0 0 {name=V_EN value="DC 0 AC 0 pulse( 0m 'PAR_VDD' 0 1
 spice_ignore=true}
 C {lab_wire.sym} 330 -350 0 0 {name=p11 sig_type=std_logic lab=V_EN}
 C {vsource.sym} 230 -250 0 0 {name=VDD1 value="PAR_VDD" savecurrent=false}
-C {designs/divider/schematic/divider.sym} 550 -380 0 0 {name=x1}
+C {divider.sym} 520 -380 0 0 {name=x2}
