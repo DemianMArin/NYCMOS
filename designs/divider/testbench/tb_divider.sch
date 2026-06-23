@@ -61,12 +61,10 @@ print v(V_LOI_p) v(V_LOI_n)
 
 
 ;transient analysis
-tran 0.1ns 10us 
+tran 0.1ns 1us 
 
-
-plot v(V_LO_REF) v(x1.LOI+_INTERNAL) v(x1.LOI-_INTERNAL) v(x1.LOQ+_INTERNAL) v(x1.LOQ-_INTERNAL) ;plot internal signals
-plot v(V_LO_REF) v(V_LOI_p)+4 v(V_LOI_n)+4  v(V_LOQ_p)-4 v(V_LOQ_n)-4 ;plot divider output
-plot v(V_LO_REF) v(V_LOI_p)-v(V_LOI_n) v(V_LOQ_p)-v(V_LOQ_n); plot differential output
+plot v(V_LO_REF) v(V_LOI_p)+4 v(V_LOI_n)+4  v(V_LOQ_p)-4 v(V_LOQ_n)-4 xlimit 10n 20n;plot divider output
+plot v(V_LO_REF) v(V_LOI_p)-v(V_LOI_n) v(V_LOQ_p)-v(V_LOQ_n) xlimit 10n 20n; plot differential output
 ;plot v(V_EN) v(x1.EN_BAR) v(x1.LO_REF_GATED) v(x1.LO_REF_BAR); plot enable signal and clock signal status
 
 plot i(vdd)*3.3 ;transient power
