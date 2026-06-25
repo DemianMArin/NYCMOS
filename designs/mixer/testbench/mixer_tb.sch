@@ -33,18 +33,18 @@ N 1110 -670 1110 -630 {lab=LO_m}
 N 610 -560 650 -560 {lab=IFp}
 N 610 -520 650 -520 {lab=IFm}
 C {vsource.sym} 720 -600 0 0 {name=V1 value=3.3 savecurrent=false}
-C {vsource.sym} 810 -600 0 0 {name=Vrfp value="DC 1.1 AC SIN(1.1 5m 76Meg 0 0 0)" savecurrent=false}
-C {vsource.sym} 900 -600 0 0 {name=Vrfm value="DC 1.1 AC SIN(1.1 5m 76Meg 0 0 180)" savecurrent=false}
+C {vsource.sym} 810 -600 0 0 {name=Vrfp value="DC 1.1 AC SIN(1.1 5m 100MMeg 0 0 0)" savecurrent=false}
+C {vsource.sym} 900 -600 0 0 {name=Vrfm value="DC 1.1 AC SIN(1.1 5m 100Meg 0 0 180)" savecurrent=false}
 C {title.sym} 180 -40 0 0 {name=l1 author="Charbel El Haddad"}
-C {isource.sym} 440 -420 0 0 {name=I0 value=500u}
+C {isource.sym} 440 -420 0 0 {name=I0 value=1m}
 C {gnd.sym} 440 -350 0 0 {name=l2 lab=0}
-C {devices/code_shown.sym} 40 -160 0 0 {name=MODELS only_toplevel=true
+C {devices/code_shown.sym} 40 -200 0 0 {name=MODELS only_toplevel=true
 format="tcleval( @value )"
 value="
 .include $::180MCU_MODELS/design.ngspice
 .lib $::180MCU_MODELS/sm141064.ngspice typical
 "}
-C {devices/code_shown.sym} 0 -1400 0 0 {name=NGSPICE only_toplevel=true
+C {devices/code_shown.sym} 0 -1410 0 0 {name=NGSPICE only_toplevel=true
 value="
 
 .control
@@ -81,16 +81,17 @@ plot V(LO_p)
 plot vrf
 plot vif
 
-fft vif
-plot mag(vif) vs frequency 
+fft vif vrf
+
+plot mag(vif) vs frequency
 .endc
 "}
 C {vdd.sym} 420 -650 0 0 {name=l3 lab=VDD}
 C {vdd.sym} 720 -650 0 0 {name=l4 lab=VDD}
 C {gnd.sym} 720 -540 0 0 {name=l5 lab=0}
 C {gnd.sym} 950 -540 0 0 {name=l6 lab=0}
-C {vsource.sym} 1000 -600 0 0 {name=Vlop value= "AC pulse(0 3.3 0 200p 200p 6.65n 13.3n)" savecurrent=false}
-C {vsource.sym} 1110 -600 0 0 {name=Vlom value="AC pulse(3.3 0 0 200p 200p 6.65n 13.3n)" savecurrent=false}
+C {vsource.sym} 1000 -600 0 0 {name=Vlop value= "DC 1.65 AC pulse(0 3.3 0 200p 200p 6.65n 13.3n)" savecurrent=false}
+C {vsource.sym} 1110 -600 0 0 {name=Vlom value="DC 1.65 AC pulse(3.3 0 0 200p 200p 6.65n 13.3n)" savecurrent=false}
 C {lab_wire.sym} 810 -660 0 0 {name=p1 sig_type=std_logic lab=RF_p}
 C {lab_wire.sym} 900 -650 0 0 {name=p2 sig_type=std_logic lab=RF_m
 }
