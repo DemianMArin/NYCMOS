@@ -49,8 +49,8 @@
 | 1 mA | 11 dB | 3.6 mS | 1.8 V | 0.2 V | 2 mS | 0.265 V | 0.3 V | drop out of sat|
 
 ## Next Steps
-- [ ] Replace ideal tail current source with ...
-- [ ] Replace load res with GF180 poly
+- [x] Replace ideal tail current source with ...
+- [x] Replace load res with GF180 poly
 - [ ] Add RF input biasing/signal conditioning
 - [ ] Measure RF/LO feedthrough and IIP3
 - [ ] Try different receiver topologies
