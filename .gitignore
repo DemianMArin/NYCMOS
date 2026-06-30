@@ -20,5 +20,10 @@ __pychache__/
 *.bak
 *.rpt
 
+#Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+.jupyter_ystore.db
+**/.jupyter_ystore.db
 tmp/
 temp/

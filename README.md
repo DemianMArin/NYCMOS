@@ -17,7 +17,7 @@ The platform enables experimentation with:
 Observable RF, IF, and baseband nodes allow measurement using oscilloscopes, FFT analysis, and external filtering networks.
 
 ## Architecture
-![NYCMOS System Architecture](docs/images/nycmos_block_diag_v2.drawio.webp)
+![NYCMOS System Architecture](docs/images/nycmos_block_diag_v2.png)
 
 The platform consists of:
 
