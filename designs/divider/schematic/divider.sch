@@ -11,10 +11,10 @@ N 660 -1120 660 -1080 {lab=#net1}
 N 540 -1080 540 -1040 {lab=#net1}
 N 400 -1010 500 -1010 {lab=LO_REF_BAR}
 N 540 -980 540 -930 {lab=VSS}
-N 300 -1150 370 -1150 {lab=LOQ-_INTERNAL}
-N 700 -1150 790 -1150 {lab=LOQ+_INTERNAL}
-N 660 -1290 660 -1180 {lab=LOI-_INTERNAL}
-N 410 -1300 410 -1180 {lab=LOI+_INTERNAL}
+N 300 -1150 370 -1150 {lab=LOI-_INTERNAL}
+N 700 -1150 790 -1150 {lab=LOI+_INTERNAL}
+N 660 -1290 660 -1180 {lab=LOQ-_INTERNAL}
+N 410 -1300 410 -1180 {lab=LOQ+_INTERNAL}
 N 410 -1510 660 -1510 {lab=VDD}
 N 960 -1120 960 -1080 {lab=#net2}
 N 960 -1080 1210 -1080 {lab=#net2}
@@ -22,16 +22,16 @@ N 1210 -1120 1210 -1080 {lab=#net2}
 N 1090 -1080 1090 -1040 {lab=#net2}
 N 950 -1010 1050 -1010 {lab=LO_REF_GATED}
 N 1090 -980 1090 -930 {lab=VSS}
-N 960 -1230 960 -1180 {lab=LOI-_INTERNAL}
-N 1000 -1150 1030 -1150 {lab=LOI+_INTERNAL}
-N 1030 -1200 1030 -1150 {lab=LOI+_INTERNAL}
-N 660 -1230 960 -1230 {lab=LOI-_INTERNAL}
-N 1030 -1250 1030 -1200 {lab=LOI+_INTERNAL}
-N 410 -1250 1030 -1250 {lab=LOI+_INTERNAL}
-N 1170 -1220 1170 -1150 {lab=LOI-_INTERNAL}
-N 660 -1220 1170 -1220 {lab=LOI-_INTERNAL}
-N 1210 -1260 1210 -1180 {lab=LOI+_INTERNAL}
-N 410 -1260 1210 -1260 {lab=LOI+_INTERNAL}
+N 960 -1230 960 -1180 {lab=LOQ-_INTERNAL}
+N 1000 -1150 1030 -1150 {lab=LOQ+_INTERNAL}
+N 1030 -1200 1030 -1150 {lab=LOQ+_INTERNAL}
+N 660 -1230 960 -1230 {lab=LOQ-_INTERNAL}
+N 1030 -1250 1030 -1200 {lab=LOQ+_INTERNAL}
+N 410 -1250 1030 -1250 {lab=LOQ+_INTERNAL}
+N 1170 -1220 1170 -1150 {lab=LOQ-_INTERNAL}
+N 660 -1220 1170 -1220 {lab=LOQ-_INTERNAL}
+N 1210 -1260 1210 -1180 {lab=LOQ+_INTERNAL}
+N 410 -1260 1210 -1260 {lab=LOQ+_INTERNAL}
 N 540 -930 1090 -930 {lab=VSS}
 N 540 -1010 590 -1010 {lab=VSS}
 N 590 -1000 590 -930 {lab=VSS}
@@ -48,10 +48,10 @@ N 1710 -1120 1710 -1080 {lab=#net3}
 N 1590 -1080 1590 -1040 {lab=#net3}
 N 1450 -1010 1550 -1010 {lab=LO_REF_GATED}
 N 1590 -980 1590 -930 {lab=VSS}
-N 1350 -1150 1420 -1150 {lab=LOI+_INTERNAL}
-N 1750 -1150 1840 -1150 {lab=LOI-_INTERNAL}
-N 1710 -1290 1710 -1180 {lab=LOQ-_INTERNAL}
-N 1460 -1300 1460 -1180 {lab=LOQ+_INTERNAL}
+N 1350 -1150 1420 -1150 {lab=LOQ+_INTERNAL}
+N 1750 -1150 1840 -1150 {lab=LOQ-_INTERNAL}
+N 1710 -1290 1710 -1180 {lab=LOI-_INTERNAL}
+N 1460 -1300 1460 -1180 {lab=LOI+_INTERNAL}
 N 1460 -1490 1710 -1490 {lab=VDD}
 N 2010 -1120 2010 -1080 {lab=#net4}
 N 2010 -1080 2260 -1080 {lab=#net4}
@@ -59,16 +59,16 @@ N 2260 -1120 2260 -1080 {lab=#net4}
 N 2140 -1080 2140 -1040 {lab=#net4}
 N 2000 -1010 2100 -1010 {lab=LO_REF_BAR}
 N 2140 -980 2140 -930 {lab=VSS}
-N 2010 -1230 2010 -1180 {lab=LOQ-_INTERNAL}
-N 2050 -1150 2080 -1150 {lab=LOQ+_INTERNAL}
-N 2080 -1200 2080 -1150 {lab=LOQ+_INTERNAL}
-N 1710 -1230 2010 -1230 {lab=LOQ-_INTERNAL}
-N 2080 -1250 2080 -1200 {lab=LOQ+_INTERNAL}
-N 1460 -1250 2080 -1250 {lab=LOQ+_INTERNAL}
-N 2220 -1220 2220 -1150 {lab=LOQ-_INTERNAL}
-N 1710 -1220 2220 -1220 {lab=LOQ-_INTERNAL}
-N 2260 -1260 2260 -1180 {lab=LOQ+_INTERNAL}
-N 1460 -1260 2260 -1260 {lab=LOQ+_INTERNAL}
+N 2010 -1230 2010 -1180 {lab=LOI-_INTERNAL}
+N 2050 -1150 2080 -1150 {lab=LOI+_INTERNAL}
+N 2080 -1200 2080 -1150 {lab=LOI+_INTERNAL}
+N 1710 -1230 2010 -1230 {lab=LOI-_INTERNAL}
+N 2080 -1250 2080 -1200 {lab=LOI+_INTERNAL}
+N 1460 -1250 2080 -1250 {lab=LOI+_INTERNAL}
+N 2220 -1220 2220 -1150 {lab=LOI-_INTERNAL}
+N 1710 -1220 2220 -1220 {lab=LOI-_INTERNAL}
+N 2260 -1260 2260 -1180 {lab=LOI+_INTERNAL}
+N 1460 -1260 2260 -1260 {lab=LOI+_INTERNAL}
 N 1590 -930 2140 -930 {lab=VSS}
 N 1590 -1010 1640 -1010 {lab=VSS}
 N 1640 -1000 1640 -930 {lab=VSS}
@@ -81,17 +81,17 @@ N 2260 -1150 2310 -1150 {lab=VSS}
 N 1460 -1150 1710 -1150 {lab=VSS}
 N 1840 -870 1840 -830 {lab=VSS}
 N 800 -870 800 -830 {lab=VSS}
-N 2520 -640 2530 -640 {lab=LO_REF_GATED}
-N 2520 -750 2520 -640 {lab=LO_REF_GATED}
-N 2520 -750 2530 -750 {lab=LO_REF_GATED}
-N 2570 -720 2570 -670 {lab=LO_REF_BAR}
-N 2570 -610 2570 -570 {lab=#net5}
-N 2570 -750 2610 -750 {lab=VDD}
-N 2610 -920 2610 -750 {lab=VDD}
-N 2570 -920 2610 -920 {lab=VDD}
-N 2570 -640 2610 -640 {lab=VSS}
-N 2610 -640 2610 -570 {lab=VSS}
-N 2570 -490 2610 -490 {lab=VSS}
+N 2450 -420 2460 -420 {lab=LO_REF_GATED}
+N 2450 -530 2450 -420 {lab=LO_REF_GATED}
+N 2450 -530 2460 -530 {lab=LO_REF_GATED}
+N 2500 -500 2500 -450 {lab=LO_REF_BAR}
+N 2500 -390 2500 -350 {lab=#net5}
+N 2500 -530 2540 -530 {lab=VDD}
+N 2540 -700 2540 -530 {lab=VDD}
+N 2500 -700 2540 -700 {lab=VDD}
+N 2500 -420 2540 -420 {lab=VSS}
+N 2540 -420 2540 -350 {lab=VSS}
+N 2500 -270 2540 -270 {lab=VSS}
 N 800 -920 800 -870 {lab=VSS}
 N 800 -930 800 -920 {lab=VSS}
 N 1840 -930 1840 -870 {lab=VSS}
@@ -216,18 +216,18 @@ N 1710 -300 1770 -300 {lab=#net16}
 N 1770 -300 1780 -300 {lab=#net16}
 N 1710 -300 1710 -190 {lab=#net16}
 N 1610 -240 1710 -240 {lab=#net16}
-N 2000 -660 2010 -660 {lab=EN}
-N 2000 -770 2000 -660 {lab=EN}
-N 2000 -770 2010 -770 {lab=EN}
-N 2050 -740 2050 -690 {lab=EN_BAR}
-N 2050 -630 2050 -590 {lab=VSS}
-N 2050 -840 2050 -800 {lab=VDD}
-N 2050 -770 2090 -770 {lab=VDD}
-N 2090 -840 2090 -770 {lab=VDD}
-N 2050 -840 2090 -840 {lab=VDD}
-N 2050 -660 2090 -660 {lab=VSS}
-N 2090 -660 2090 -590 {lab=VSS}
-N 2050 -590 2090 -590 {lab=VSS}
+N 2060 -560 2070 -560 {lab=EN}
+N 2060 -670 2060 -560 {lab=EN}
+N 2060 -670 2070 -670 {lab=EN}
+N 2110 -640 2110 -590 {lab=EN_BAR}
+N 2110 -530 2110 -490 {lab=VSS}
+N 2110 -740 2110 -700 {lab=VDD}
+N 2110 -670 2150 -670 {lab=VDD}
+N 2150 -740 2150 -670 {lab=VDD}
+N 2110 -740 2150 -740 {lab=VDD}
+N 2110 -560 2150 -560 {lab=VSS}
+N 2150 -560 2150 -490 {lab=VSS}
+N 2110 -490 2150 -490 {lab=VSS}
 N 2030 -230 2040 -230 {lab=LO_REF}
 N 2030 -420 2030 -230 {lab=LO_REF}
 N 2030 -420 2040 -420 {lab=LO_REF}
@@ -242,22 +242,22 @@ N 2150 -190 2190 -190 {lab=VSS}
 N 2150 -190 2150 -140 {lab=VSS}
 N 2150 -140 2190 -140 {lab=VSS}
 N 2190 -160 2190 -140 {lab=VSS}
-N 2570 -820 2570 -780 {lab=#net19}
-N 2570 -850 2610 -850 {lab=VDD}
-N 2570 -920 2570 -880 {lab=VDD}
-N 2500 -850 2530 -850 {lab=EN_BAR}
-N 2610 -570 2610 -490 {lab=VSS}
-N 2570 -510 2570 -490 {lab=VSS}
-N 2490 -540 2530 -540 {lab=EN}
-N 2570 -700 2740 -700 {lab=LO_REF_BAR}
-N 2740 -700 2750 -700 {lab=LO_REF_BAR}
-N 2750 -700 2750 -620 {lab=LO_REF_BAR}
-N 2750 -560 2750 -490 {lab=VSS}
-N 2610 -490 2750 -490 {lab=VSS}
-N 2750 -590 2800 -590 {lab=VSS}
-N 2800 -590 2800 -490 {lab=VSS}
-N 2750 -490 2800 -490 {lab=VSS}
-N 2670 -590 2710 -590 {lab=EN_BAR}
+N 2500 -600 2500 -560 {lab=#net19}
+N 2500 -630 2540 -630 {lab=VDD}
+N 2500 -700 2500 -660 {lab=VDD}
+N 2430 -630 2460 -630 {lab=EN_BAR}
+N 2540 -350 2540 -270 {lab=VSS}
+N 2500 -290 2500 -270 {lab=VSS}
+N 2420 -320 2460 -320 {lab=EN}
+N 2500 -480 2670 -480 {lab=LO_REF_BAR}
+N 2670 -480 2680 -480 {lab=LO_REF_BAR}
+N 2680 -480 2680 -400 {lab=LO_REF_BAR}
+N 2680 -340 2680 -270 {lab=VSS}
+N 2540 -270 2680 -270 {lab=VSS}
+N 2680 -370 2730 -370 {lab=VSS}
+N 2730 -370 2730 -270 {lab=VSS}
+N 2680 -270 2730 -270 {lab=VSS}
+N 2600 -370 2640 -370 {lab=EN_BAR}
 N 2100 -420 2190 -420 {lab=LO_REF_GATED}
 N 2190 -420 2190 -230 {lab=LO_REF_GATED}
 N 770 -530 770 -510 {lab=#net8}
@@ -286,7 +286,7 @@ N 1030 -190 1030 -140 {lab=VSS}
 N 990 -160 990 -120 {lab=#net20}
 N 810 -190 810 -140 {lab=VSS}
 N 1460 -1430 1460 -1360 {lab=VDD}
-N 2570 -540 2610 -540 {lab=VSS}
+N 2500 -320 2540 -320 {lab=VSS}
 N 1610 -160 1610 -120 {lab=#net21}
 N 1610 -30 1650 -30 {lab=VSS}
 N 1610 -60 1610 -30 {lab=VSS}
@@ -315,11 +315,11 @@ N 1650 -570 1650 -530 {lab=VSS}
 N 1650 -580 1650 -570 {lab=VSS}
 N 1870 -580 1870 -530 {lab=VSS}
 N 410 -1400 410 -1360 {lab=VDD}
-N 660 -1300 660 -1290 {lab=LOI-_INTERNAL}
+N 660 -1300 660 -1290 {lab=LOQ-_INTERNAL}
 N 660 -1400 660 -1360 {lab=VDD}
 N 430 -1330 640 -1330 {lab=VSS}
 N 1480 -1330 1690 -1330 {lab=VSS}
-N 1710 -1300 1710 -1290 {lab=LOQ-_INTERNAL}
+N 1710 -1300 1710 -1290 {lab=LOI-_INTERNAL}
 N 1710 -1430 1710 -1360 {lab=VDD}
 N 700 -680 700 -670 {lab=VSS}
 N 700 -270 700 -260 {lab=VSS}
@@ -421,11 +421,11 @@ C {opin.sym} -80 -480 0 0 {name=p5 lab=LOI+}
 C {opin.sym} -80 -430 0 0 {name=p6 lab=LOI-}
 C {lab_wire.sym} 800 -830 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 450 -1010 0 0 {name=p8 sig_type=std_logic lab=LO_REF_BAR}
-C {lab_wire.sym} 330 -1150 0 0 {name=p10 sig_type=std_logic lab=LOQ-_INTERNAL}
-C {lab_wire.sym} 770 -1150 0 0 {name=p11 sig_type=std_logic lab=LOQ+_INTERNAL}
+C {lab_wire.sym} 330 -1150 0 0 {name=p10 sig_type=std_logic lab=LOI-_INTERNAL}
+C {lab_wire.sym} 770 -1150 0 0 {name=p11 sig_type=std_logic lab=LOI+_INTERNAL}
 C {lab_wire.sym} 550 -1150 0 0 {name=p12 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 480 -1260 0 0 {name=p13 sig_type=std_logic lab=LOI+_INTERNAL}
-C {lab_wire.sym} 700 -1230 0 0 {name=p14 sig_type=std_logic lab=LOI-_INTERNAL}
+C {lab_wire.sym} 480 -1260 0 0 {name=p13 sig_type=std_logic lab=LOQ+_INTERNAL}
+C {lab_wire.sym} 700 -1230 0 0 {name=p14 sig_type=std_logic lab=LOQ-_INTERNAL}
 C {lab_wire.sym} 530 -1510 0 0 {name=p15 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 940 -1150 0 0 {name=p16 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 1250 -1150 0 0 {name=p17 sig_type=std_logic lab=VSS}
@@ -515,17 +515,17 @@ spiceprefix=X
 }
 C {lab_wire.sym} 1840 -830 0 0 {name=p18 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2070 -1010 0 0 {name=p20 sig_type=std_logic lab=LO_REF_BAR}
-C {lab_wire.sym} 1380 -1150 0 0 {name=p21 sig_type=std_logic lab=LOI+_INTERNAL}
-C {lab_wire.sym} 1820 -1150 0 0 {name=p22 sig_type=std_logic lab=LOI-_INTERNAL}
+C {lab_wire.sym} 1380 -1150 0 0 {name=p21 sig_type=std_logic lab=LOQ+_INTERNAL}
+C {lab_wire.sym} 1820 -1150 0 0 {name=p22 sig_type=std_logic lab=LOQ-_INTERNAL}
 C {lab_wire.sym} 1600 -1150 0 0 {name=p23 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 1530 -1260 0 0 {name=p24 sig_type=std_logic lab=LOQ+_INTERNAL}
-C {lab_wire.sym} 1750 -1230 0 0 {name=p25 sig_type=std_logic lab=LOQ-_INTERNAL}
+C {lab_wire.sym} 1530 -1260 0 0 {name=p24 sig_type=std_logic lab=LOI+_INTERNAL}
+C {lab_wire.sym} 1750 -1230 0 0 {name=p25 sig_type=std_logic lab=LOI-_INTERNAL}
 C {lab_wire.sym} 1570 -1490 0 0 {name=p26 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1990 -1150 0 0 {name=p27 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2300 -1150 0 0 {name=p28 sig_type=std_logic lab=VSS}
 C {opin.sym} -80 -390 0 0 {name=p29 lab=LOQ+}
 C {opin.sym} -80 -340 0 0 {name=p30 lab=LOQ-}
-C {symbols/nfet_03v3.sym} 2550 -640 0 0 {name=M13
+C {symbols/nfet_03v3.sym} 2480 -420 0 0 {name=M13
 L=0.28u
 W=5u
 nf=1
@@ -539,7 +539,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 2550 -750 0 0 {name=M14
+C {symbols/pfet_03v3.sym} 2480 -530 0 0 {name=M14
 L=0.28u
 W=10u
 nf=1
@@ -553,10 +553,10 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 2610 -920 0 0 {name=p4 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 2610 -490 0 0 {name=p31 sig_type=std_logic lab=VSS}
+C {lab_wire.sym} 2540 -700 0 0 {name=p4 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 2540 -270 0 0 {name=p31 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2030 -340 0 0 {name=p32 sig_type=std_logic lab=LO_REF}
-C {lab_wire.sym} 2740 -700 0 1 {name=p33 sig_type=std_logic lab=LO_REF_BAR}
+C {lab_wire.sym} 2670 -480 0 1 {name=p33 sig_type=std_logic lab=LO_REF_BAR}
 C {symbols/nfet_03v3.sym} 750 -600 0 0 {name=M15
 L=0.28u
 W=2u
@@ -680,7 +680,7 @@ C {lab_wire.sym} 1650 -370 0 0 {name=p45 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1420 -240 0 0 {name=p47 sig_type=std_logic lab=LOQ-_INTERNAL}
 C {symbols/nfet_03v3.sym} 970 -600 0 0 {name=M23
 L=0.28u
-W=2u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -694,7 +694,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 970 -710 0 0 {name=M24
 L=0.28u
-W=4u
+W=2u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -710,7 +710,7 @@ C {lab_wire.sym} 1030 -780 0 0 {name=p40 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 990 -650 0 1 {name=p48 sig_type=std_logic lab=LOI+}
 C {symbols/nfet_03v3.sym} 970 -190 0 0 {name=M25
 L=0.28u
-W=2u
+W=1u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -724,7 +724,7 @@ spiceprefix=X
 }
 C {symbols/pfet_03v3.sym} 970 -300 0 0 {name=M26
 L=0.28u
-W=4u
+W=2u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -799,7 +799,7 @@ spiceprefix=X
 C {lab_wire.sym} 1870 -370 0 0 {name=p55 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 1830 -240 0 1 {name=p56 sig_type=std_logic lab=LOQ-}
 C {ipin.sym} -120 -440 0 0 {name=p58 lab=EN}
-C {symbols/nfet_03v3.sym} 2030 -660 0 0 {name=M31
+C {symbols/nfet_03v3.sym} 2090 -560 0 0 {name=M31
 L=0.28u
 W=5u
 nf=1
@@ -813,7 +813,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {symbols/pfet_03v3.sym} 2030 -770 0 0 {name=M32
+C {symbols/pfet_03v3.sym} 2090 -670 0 0 {name=M32
 L=0.28u
 W=10u
 nf=1
@@ -827,10 +827,10 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 2090 -840 0 0 {name=p59 sig_type=std_logic lab=VDD}
-C {lab_wire.sym} 2090 -590 0 0 {name=p60 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 2000 -700 0 0 {name=p61 sig_type=std_logic lab=EN}
-C {lab_wire.sym} 2050 -700 0 1 {name=p62 sig_type=std_logic lab=EN_BAR}
+C {lab_wire.sym} 2150 -740 0 0 {name=p59 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 2150 -490 0 0 {name=p60 sig_type=std_logic lab=VSS}
+C {lab_wire.sym} 2060 -600 0 0 {name=p61 sig_type=std_logic lab=EN}
+C {lab_wire.sym} 2110 -600 0 1 {name=p62 sig_type=std_logic lab=EN_BAR}
 C {symbols/nfet_03v3.sym} 2070 -210 3 0 {name=M33
 L=0.28u
 W=5u
@@ -882,7 +882,7 @@ spiceprefix=X
 }
 C {lab_wire.sym} 2150 -140 0 0 {name=p67 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 2250 -190 0 1 {name=p70 sig_type=std_logic lab=EN_BAR}
-C {symbols/pfet_03v3.sym} 2550 -850 0 0 {name=M37
+C {symbols/pfet_03v3.sym} 2480 -630 0 0 {name=M37
 L=0.28u
 W=10u
 nf=1
@@ -896,8 +896,8 @@ sa=0 sb=0 sd=0
 model=pfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 2510 -850 0 0 {name=p64 sig_type=std_logic lab=EN_BAR}
-C {symbols/nfet_03v3.sym} 2550 -540 0 0 {name=M38
+C {lab_wire.sym} 2440 -630 0 0 {name=p64 sig_type=std_logic lab=EN_BAR}
+C {symbols/nfet_03v3.sym} 2480 -320 0 0 {name=M38
 L=0.28u
 W=5u
 nf=1
@@ -911,9 +911,9 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 2520 -690 0 0 {name=p74 sig_type=std_logic lab=LO_REF_GATED}
-C {lab_wire.sym} 2510 -540 0 0 {name=p73 sig_type=std_logic lab=EN}
-C {symbols/nfet_03v3.sym} 2730 -590 0 0 {name=M39
+C {lab_wire.sym} 2450 -470 0 0 {name=p74 sig_type=std_logic lab=LO_REF_GATED}
+C {lab_wire.sym} 2440 -320 0 0 {name=p73 sig_type=std_logic lab=EN}
+C {symbols/nfet_03v3.sym} 2660 -370 0 0 {name=M39
 L=0.28u
 W=5u
 nf=1
@@ -927,7 +927,7 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 2700 -590 0 0 {name=p75 sig_type=std_logic lab=EN_BAR}
+C {lab_wire.sym} 2630 -370 0 0 {name=p75 sig_type=std_logic lab=EN_BAR}
 C {symbols/nfet_03v3.sym} 750 -480 0 0 {name=M40
 L=0.28u
 W=2u
@@ -1083,53 +1083,53 @@ m=1}
 C {lab_wire.sym} 1600 -1330 0 0 {name=p83 sig_type=std_logic lab=VSS}
 C {symbols/ppolyf_u_1k.sym} 700 -650 3 1 {name=R5
 W=1e-6
-L=7.7e-6
+L=7.9e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 700 -680 0 0 {name=p84 sig_type=std_logic lab=VSS}
 C {symbols/ppolyf_u_1k.sym} 700 -240 3 1 {name=R6
 W=1e-6
-L=7.7e-6
+L=7.9e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 700 -270 0 0 {name=p85 sig_type=std_logic lab=VSS}
 C {symbols/ppolyf_u_1k.sym} 1540 -240 3 1 {name=R7
 W=1e-6
-L=7.7e-6
+L=7.9e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 1540 -270 0 0 {name=p86 sig_type=std_logic lab=VSS}
 C {symbols/ppolyf_u_1k.sym} 1540 -630 3 1 {name=R8
 W=1e-6
-L=7.7e-6
+L=7.9e-6
 model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 1540 -660 0 0 {name=p87 sig_type=std_logic lab=VSS}
-C {symbols/cap_mim_analog.sym} 620 -650 3 0 {name=C1
+C {symbols/cap_mim_2f0fF.sym} 620 -650 3 0 {name=C1
 W=50e-6
 L=10e-6
-model=cap_mim_2f0_m3m4_noshield
+model=cap_mim_2f0fF
 spiceprefix=X
 m=1}
-C {symbols/cap_mim_analog.sym} 620 -240 3 0 {name=C2
+C {symbols/cap_mim_2f0fF.sym} 620 -240 3 0 {name=C2
 W=50e-6
 L=10e-6
-model=cap_mim_2f0_m3m4_noshield
+model=cap_mim_2f0fF
 spiceprefix=X
 m=1}
-C {symbols/cap_mim_analog.sym} 1460 -630 3 0 {name=C3
+C {symbols/cap_mim_2f0fF.sym} 1460 -630 3 0 {name=C3
 W=50e-6
 L=10e-6
-model=cap_mim_2f0_m3m4_noshield
+model=cap_mim_2f0fF
 spiceprefix=X
 m=1}
-C {symbols/cap_mim_analog.sym} 1460 -240 3 0 {name=C4
+C {symbols/cap_mim_2f0fF.sym} 1460 -240 3 0 {name=C4
 W=50e-6
 L=10e-6
-model=cap_mim_2f0_m3m4_noshield
+model=cap_mim_2f0fF
 spiceprefix=X
 m=1}

@@ -122,4 +122,4 @@ C {vsource.sym} 350 -250 0 0 {name=V_EN value="DC 0 AC 0 pulse( 0m 'PAR_VDD' 0 1
 spice_ignore=true}
 C {lab_wire.sym} 330 -350 0 0 {name=p11 sig_type=std_logic lab=V_EN}
 C {vsource.sym} 230 -250 0 0 {name=VDD1 value="PAR_VDD" savecurrent=false}
-C {designs/divider/schematic/divider.sym} 550 -380 0 0 {name=x1}
+C {divider/schematic/divider.sym} 550 -380 0 0 {name=x1}
