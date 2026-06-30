@@ -1,0 +1,10 @@
+# Source the PDK xschemrc file
+# use gf180mcuD as the pdk
+source $env(PDK_ROOT)/gf180mcuD/libs.tech/xschem/xschemrc
+
+# Add /foss/designs/NYCMOS as a library path. This means that when you open xschem in /foss/designs/NYCMOS/designs, symbols that were saved with their directory will be appended to the correct directory. EX: divider.sym is saved as /divider/divider.sym and when searching, xschem will search for it in /foss/designs/NYCMOS/designs/divider/divider.sym
+append XSCHEM_LIBRARY_PATH :$env(DESIGNS)/NYCMOS
+puts ${XSCHEM_LIBRARY_PATH}
+puts $env(DESIGNS)
+puts "NYCMOS Source Successful"
+
