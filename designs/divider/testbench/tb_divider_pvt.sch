@@ -148,7 +148,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice moscap_typical
 .lib $::180MCU_MODELS/sm141064.ngspice mimcap_typical
 "
-spice_ignore=true}
+}
 C {code_shown.sym} 560 70 0 0 {name=MODELS1 only_toplevel=true  
 format="tcleval( @value )" 
 value="
@@ -200,4 +200,4 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice moscap_typical
 .lib $::180MCU_MODELS/sm141064.ngspice mimcap_typical
 "
-}
+spice_ignore=true}
