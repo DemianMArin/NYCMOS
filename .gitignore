@@ -25,5 +25,6 @@ __pychache__/
 **/.ipynb_checkpoints/
 .jupyter_ystore.db
 **/.jupyter_ystore.db
+*.mat
 tmp/
 temp/

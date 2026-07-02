@@ -1,0 +1,82 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {}
+V {}
+S {}
+F {}
+E {}
+N 330 -540 330 -500 {lab=#net1}
+N 330 -730 330 -690 {lab=VDD}
+N 330 -730 340 -730 {lab=VDD}
+N 340 -730 540 -730 {lab=VDD}
+N 540 -730 540 -680 {lab=VDD}
+N 460 -740 460 -730 {lab=VDD}
+N 410 -730 410 -680 {lab=VDD}
+N 470 -730 470 -680 {lab=VDD}
+N 330 -630 330 -610 {lab=#net2}
+N 410 -620 410 -600 {lab=#net3}
+N 470 -620 470 -600 {lab=#net4}
+N 540 -620 540 -600 {lab=#net5}
+N 540 -540 540 -500 {lab=#net6}
+N 530 -500 540 -500 {lab=#net6}
+N 470 -540 470 -500 {lab=#net7}
+N 410 -540 410 -500 {lab=#net8}
+N 330 -550 330 -540 {lab=#net1}
+N 540 -730 660 -730 {lab=VDD}
+N 660 -730 660 -720 {lab=VDD}
+N 660 -660 660 -320 {lab=0}
+N 600 -320 660 -320 {lab=0}
+N 660 -320 660 -300 {lab=0}
+C {/foss/designs/NYCMOS/designs/mirrors/schematic/nmos_mirror.sym} 40 -190 0 0 {name=x1}
+C {isource.sym} 330 -660 0 0 {name=I0 value=100u}
+C {vdd.sym} 460 -740 0 0 {name=l1 lab=VDD}
+C {res.sym} 410 -650 0 0 {name=R1
+value=1k
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 470 -650 0 0 {name=R2
+value=1k
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 540 -650 0 0 {name=R3
+value=1k
+footprint=1206
+device=resistor
+m=1}
+C {ammeter.sym} 330 -580 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
+C {ammeter.sym} 410 -570 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0}
+C {ammeter.sym} 470 -570 0 0 {name=Vmeas2 savecurrent=true spice_ignore=0}
+C {ammeter.sym} 540 -570 0 0 {name=Vmeas3 savecurrent=true spice_ignore=0}
+C {vsource.sym} 660 -690 0 0 {name=V1 value=3.3 savecurrent=false}
+C {gnd.sym} 660 -300 0 0 {name=l2 lab=0}
+C {devices/code_shown.sym} 50 -200 0 0 {name=MODELS only_toplevel=true
+format="tcleval( @value )"
+value="
+.include $::180MCU_MODELS/design.ngspice
+.lib $::180MCU_MODELS/sm141064.ngspice typical
+"}
+C {devices/code_shown.sym} 800 -870 0 0 {name=NGSPICE only_toplevel=true
+value="
+.control
+op
+print i(Vmeas)
+print i(Vmeas1)
+print i(Vmeas2)
+print i(Vmeas3)
+
+print @m.x1.xm1.m0[gm]
+print @m.x1.xm1.m0[vgs]
+print @m.x1.xm1.m0[vds]
+print @m.x1.xm1.m0[vdsat]
+
+print @m.x1.xm2.m0[gm]
+print @m.x1.xm2.m0[vgs]
+print @m.x1.xm2.m0[vds]
+print @m.x1.xm2.m0[vdsat]
+
+write test_nfet_03v3.raw
+.endc
+"}
+C {title.sym} 180 -40 0 0 {name=l3 author="Charbel El Haddad"}
