@@ -152,7 +152,7 @@ print @m.x2.x2.xm2.m0[vds]
 print @m.x2.x2.xm2.m0[vdsat]
 
 print i(vmeas)
-tran 0.01n 2u ;transient sim
+;tran 0.01n 2u ;transient sim
 let vrf = V(RF_p)-V(RF_m)
 let vif = V(IFp)-V(IFm)
 
@@ -174,9 +174,6 @@ C {gnd.sym} 410 -800 0 0 {name=l12 lab=0}
 C {/foss/designs/NYCMOS/designs/mixer/schematic/mixer.sym} 430 -900 0 0 {name=x1}
 C {ammeter.sym} 460 -800 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {/foss/designs/NYCMOS/designs/mirrors/schematic/mirror_network_with_enable.sym} -170 -430 0 0 {name=x2}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/inv.sym} 1420 -660 0 0 {name=x3}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/inv.sym} 1150 -660 0 0 {name=x4}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/inv.sym} 1710 -670 0 0 {name=x5}
 C {vdd.sym} 1420 -790 0 0 {name=l13 lab=VDD}
 C {gnd.sym} 1320 -500 0 0 {name=l14 lab=0}
 C {lab_wire.sym} 930 -600 0 0 {name=p11 sig_type=std_logic lab=EN0}
@@ -192,9 +189,12 @@ C {lab_wire.sym} 1530 -650 0 0 {name=p20 sig_type=std_logic lab=EN1_B}
 C {lab_wire.sym} 1590 -660 0 0 {name=p21 sig_type=std_logic lab=EN2}
 C {lab_wire.sym} 1820 -660 0 0 {name=p22 sig_type=std_logic lab=EN2_B}
 C {vsource.sym} 1230 -350 0 0 {name=V2 value=3.3 savecurrent=false}
-C {vsource.sym} 1340 -350 0 0 {name=V3 value=3.3 savecurrent=false}
-C {vsource.sym} 1440 -350 0 0 {name=V4 value=3.3 savecurrent=false}
+C {vsource.sym} 1340 -350 0 0 {name=V3 value=0 savecurrent=false}
+C {vsource.sym} 1440 -350 0 0 {name=V4 value=0 savecurrent=false}
 C {lab_wire.sym} 1230 -410 0 0 {name=p23 sig_type=std_logic lab=EN0}
 C {lab_wire.sym} 1340 -400 0 0 {name=p24 sig_type=std_logic lab=EN1}
 C {lab_wire.sym} 1440 -400 0 0 {name=p25 sig_type=std_logic lab=EN2}
 C {gnd.sym} 1340 -270 0 0 {name=l15 lab=0}
+C {/foss/designs/NYCMOS/designs/digital/schematic/inv.sym} 1150 -660 0 0 {name=x4}
+C {/foss/designs/NYCMOS/designs/digital/schematic/inv.sym} 1420 -660 0 0 {name=x3}
+C {/foss/designs/NYCMOS/designs/digital/schematic/inv.sym} 1710 -670 0 0 {name=x5}

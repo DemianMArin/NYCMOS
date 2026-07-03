@@ -24,21 +24,21 @@ N 1110 -420 1110 -350 {lab=VSS}
 N 340 -560 340 -530 {lab=Ilocal}
 N 630 -420 720 -420 {lab=Ilocal}
 N 940 -420 1050 -420 {lab=#net1}
-N 780 -530 780 -500 {lab=#net2}
+N 780 -530 780 -500 {lab=VDD}
 N 490 -420 630 -420 {lab=Ilocal}
 N 1090 -660 1090 -620 {lab=VSS}
 N 1090 -770 1090 -720 {lab=I2_250u}
 N 1090 -690 1110 -690 {lab=VSS}
 N 1110 -690 1110 -620 {lab=VSS}
 N 630 -690 720 -690 {lab=Ilocal}
-N 940 -690 1050 -690 {lab=#net3}
+N 940 -690 1050 -690 {lab=#net2}
 N 780 -800 780 -770 {lab=VDD}
 N 590 -690 630 -690 {lab=Ilocal}
 N 1080 -930 1080 -890 {lab=VSS}
 N 1080 -1040 1080 -990 {lab=I3_250u}
 N 1080 -960 1100 -960 {lab=VSS}
 N 1100 -960 1100 -890 {lab=VSS}
-N 930 -960 1040 -960 {lab=#net4}
+N 930 -960 1040 -960 {lab=#net3}
 N 770 -1070 770 -1040 {lab=VDD}
 N 590 -960 590 -680 {lab=Ilocal}
 N 590 -960 710 -960 {lab=Ilocal}
@@ -88,7 +88,6 @@ spiceprefix=X
 C {iopin.sym} 340 -560 0 0 {name=p5 lab=Ilocal}
 C {iopin.sym} 1090 -500 0 0 {name=p6 lab=I1_250u}
 C {title.sym} 190 -60 0 0 {name=l1 author="Stefan Schippers"}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/transmission_gate.sym} 840 -420 0 0 {name=x1}
 C {lab_wire.sym} 660 -420 0 0 {name=p1 sig_type=std_logic lab=Ilocal}
 C {symbols/nfet_03v3.sym} 1070 -690 0 0 {name=M5
 L=0.5u
@@ -105,7 +104,6 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {iopin.sym} 1090 -770 0 0 {name=p9 lab=I2_250u}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/transmission_gate.sym} 840 -690 0 0 {name=x2}
 C {symbols/nfet_03v3.sym} 1060 -960 0 0 {name=M6
 L=0.5u
 W=20u
@@ -121,7 +119,6 @@ model=nfet_03v3
 spiceprefix=X
 }
 C {iopin.sym} 1080 -1040 0 0 {name=p12 lab=I3_250u}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/transmission_gate.sym} 830 -960 0 0 {name=x3}
 C {iopin.sym} 770 -1070 0 0 {name=p13 lab=VDD}
 C {iopin.sym} 370 -350 0 0 {name=p2 lab=VSS}
 C {lab_wire.sym} 780 -320 0 0 {name=p3 sig_type=std_logic lab=VSS}
@@ -138,3 +135,6 @@ C {iopin.sym} 840 -520 0 0 {name=p20 lab=EN_I1}
 C {iopin.sym} 840 -320 0 0 {name=p21 lab=EN_I1_B}
 C {lab_wire.sym} 780 -790 0 0 {name=p10 sig_type=std_logic lab=VDD}
 C {lab_wire.sym} 780 -520 0 0 {name=p11 sig_type=std_logic lab=VDD}
+C {/foss/designs/NYCMOS/designs/digital/schematic/transmission_gate.sym} 830 -960 0 0 {name=x1}
+C {/foss/designs/NYCMOS/designs/digital/schematic/transmission_gate.sym} 840 -690 0 0 {name=x2}
+C {/foss/designs/NYCMOS/designs/digital/schematic/transmission_gate.sym} 840 -420 0 0 {name=x3}
