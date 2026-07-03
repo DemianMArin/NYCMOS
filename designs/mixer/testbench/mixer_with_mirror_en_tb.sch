@@ -46,40 +46,43 @@ N 630 -710 680 -710 {lab=#net2}
 N 680 -710 680 -660 {lab=#net2}
 N 680 -710 790 -710 {lab=#net2}
 N 790 -710 790 -660 {lab=#net2}
-N 1150 -790 1150 -720 {lab=VDD}
-N 1150 -790 1420 -790 {lab=VDD}
-N 1420 -790 1710 -790 {lab=VDD}
-N 1710 -790 1710 -730 {lab=VDD}
-N 1420 -790 1420 -720 {lab=VDD}
-N 1150 -570 1150 -530 {lab=0}
-N 1150 -530 1420 -530 {lab=0}
-N 1420 -570 1420 -530 {lab=0}
-N 1420 -530 1710 -530 {lab=0}
-N 1710 -580 1710 -530 {lab=0}
-N 1320 -530 1320 -500 {lab=0}
 N 910 -600 950 -600 {lab=EN0}
 N 910 -580 950 -580 {lab=EN1}
 N 910 -560 950 -560 {lab=EN2}
 N 910 -500 950 -500 {lab=EN0_B}
 N 910 -480 950 -480 {lab=EN1_B}
 N 910 -460 950 -460 {lab=EN2_B}
-N 1010 -650 1050 -650 {lab=EN0}
-N 1240 -650 1270 -650 {lab=EN0_B}
-N 1300 -650 1320 -650 {lab=EN1}
-N 1510 -650 1540 -650 {lab=EN1_B}
-N 1570 -660 1610 -660 {lab=EN2}
-N 1800 -660 1830 -660 {lab=EN2_B}
-N 1230 -420 1230 -380 {lab=EN0}
-N 1340 -420 1340 -380 {lab=EN1}
-N 1440 -420 1440 -380 {lab=EN2}
-N 1230 -320 1230 -280 {lab=0}
-N 1230 -280 1340 -280 {lab=0}
-N 1340 -280 1440 -280 {lab=0}
-N 1440 -320 1440 -280 {lab=0}
-N 1340 -320 1340 -280 {lab=0}
-N 1340 -280 1340 -270 {lab=0}
+N 1550 -500 1550 -460 {lab=C0}
+N 1440 -500 1440 -460 {lab=C1}
+N 1550 -400 1550 -360 {lab=0}
+N 1440 -360 1550 -360 {lab=0}
+N 1440 -400 1440 -360 {lab=0}
+N 1440 -360 1440 -350 {lab=0}
 N 450 -770 460 -770 {lab=#net4}
 N 450 -770 450 -660 {lab=#net4}
+N 1390 -560 1550 -560 {lab=C0}
+N 1550 -560 1550 -500 {lab=C0}
+N 1390 -500 1440 -500 {lab=C1}
+N 1330 -560 1390 -560 {lab=C0}
+N 1330 -500 1390 -500 {lab=C1}
+N 1300 -500 1330 -500 {lab=C1}
+N 1300 -560 1330 -560 {lab=C0}
+N 1150 -410 1150 -380 {lab=0}
+N 1150 -670 1150 -640 {lab=VDD}
+N 950 -600 1000 -600 {lab=EN0}
+N 950 -580 980 -580 {lab=EN1}
+N 980 -580 980 -570 {lab=EN1}
+N 980 -570 1000 -570 {lab=EN1}
+N 950 -560 980 -560 {lab=EN2}
+N 980 -560 980 -540 {lab=EN2}
+N 980 -540 1000 -540 {lab=EN2}
+N 950 -500 970 -500 {lab=EN0_B}
+N 970 -510 970 -500 {lab=EN0_B}
+N 970 -510 1000 -510 {lab=EN0_B}
+N 950 -480 1000 -480 {lab=EN1_B}
+N 950 -460 980 -460 {lab=EN2_B}
+N 980 -460 980 -450 {lab=EN2_B}
+N 980 -450 1000 -450 {lab=EN2_B}
 C {vsource.sym} 940 -960 0 0 {name=V1 value=3.3 savecurrent=false}
 C {vsource.sym} 1030 -960 0 0 {name=Vrfp value="DC 1.3 AC SIN(1.3 5m 100MMeg 0 0 0)" savecurrent=false}
 C {vsource.sym} 1120 -960 0 0 {name=Vrfm value="DC 1.3 AC SIN(1.3 5m 100Meg 0 0 180)" savecurrent=false}
@@ -152,7 +155,8 @@ print @m.x2.x2.xm2.m0[vds]
 print @m.x2.x2.xm2.m0[vdsat]
 
 print i(vmeas)
-;tran 0.01n 2u ;transient sim
+
+tran 0.01n 2u ;transient sim
 let vrf = V(RF_p)-V(RF_m)
 let vif = V(IFp)-V(IFm)
 
@@ -174,27 +178,17 @@ C {gnd.sym} 410 -800 0 0 {name=l12 lab=0}
 C {/foss/designs/NYCMOS/designs/mixer/schematic/mixer.sym} 430 -900 0 0 {name=x1}
 C {ammeter.sym} 460 -800 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {/foss/designs/NYCMOS/designs/mirrors/schematic/mirror_network_with_enable.sym} -170 -430 0 0 {name=x2}
-C {vdd.sym} 1420 -790 0 0 {name=l13 lab=VDD}
-C {gnd.sym} 1320 -500 0 0 {name=l14 lab=0}
 C {lab_wire.sym} 930 -600 0 0 {name=p11 sig_type=std_logic lab=EN0}
 C {lab_wire.sym} 950 -580 0 0 {name=p12 sig_type=std_logic lab=EN1}
 C {lab_wire.sym} 950 -560 0 0 {name=p13 sig_type=std_logic lab=EN2}
 C {lab_wire.sym} 940 -500 0 0 {name=p14 sig_type=std_logic lab=EN0_B}
 C {lab_wire.sym} 940 -480 0 0 {name=p15 sig_type=std_logic lab=EN1_B}
 C {lab_wire.sym} 940 -460 0 0 {name=p16 sig_type=std_logic lab=EN2_B}
-C {lab_wire.sym} 1030 -650 0 0 {name=p17 sig_type=std_logic lab=EN0}
-C {lab_wire.sym} 1260 -650 0 0 {name=p18 sig_type=std_logic lab=EN0_B}
-C {lab_wire.sym} 1310 -650 0 0 {name=p19 sig_type=std_logic lab=EN1}
-C {lab_wire.sym} 1530 -650 0 0 {name=p20 sig_type=std_logic lab=EN1_B}
-C {lab_wire.sym} 1590 -660 0 0 {name=p21 sig_type=std_logic lab=EN2}
-C {lab_wire.sym} 1820 -660 0 0 {name=p22 sig_type=std_logic lab=EN2_B}
-C {vsource.sym} 1230 -350 0 0 {name=V2 value=3.3 savecurrent=false}
-C {vsource.sym} 1340 -350 0 0 {name=V3 value=0 savecurrent=false}
-C {vsource.sym} 1440 -350 0 0 {name=V4 value=0 savecurrent=false}
-C {lab_wire.sym} 1230 -410 0 0 {name=p23 sig_type=std_logic lab=EN0}
-C {lab_wire.sym} 1340 -400 0 0 {name=p24 sig_type=std_logic lab=EN1}
-C {lab_wire.sym} 1440 -400 0 0 {name=p25 sig_type=std_logic lab=EN2}
-C {gnd.sym} 1340 -270 0 0 {name=l15 lab=0}
-C {/foss/designs/NYCMOS/designs/digital/schematic/inv.sym} 1150 -660 0 0 {name=x4}
-C {/foss/designs/NYCMOS/designs/digital/schematic/inv.sym} 1420 -660 0 0 {name=x3}
-C {/foss/designs/NYCMOS/designs/digital/schematic/inv.sym} 1710 -670 0 0 {name=x5}
+C {vsource.sym} 1550 -430 0 1 {name=V2 value=3.3 savecurrent=false}
+C {vsource.sym} 1440 -430 0 1 {name=V3 value=3.3 savecurrent=false}
+C {lab_wire.sym} 1550 -490 0 1 {name=p23 sig_type=std_logic lab=C0}
+C {lab_wire.sym} 1440 -480 0 1 {name=p24 sig_type=std_logic lab=C1}
+C {gnd.sym} 1440 -350 0 0 {name=l15 lab=0}
+C {/foss/designs/NYCMOS/designs/digital/schematic/decoder.sym} 1150 -530 0 1 {name=x3}
+C {gnd.sym} 1150 -380 0 0 {name=l13 lab=0}
+C {vdd.sym} 1150 -670 0 0 {name=l14 lab=VDD}
