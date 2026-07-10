@@ -75,13 +75,13 @@ write tb_output_buffer.raw
 dc Vin 0.1 3.3 0.01
 
 plot Vin Vout ; input, output
-plot Vout/Vin ; transfer function
+plot Vout vs Vin deriv(vout) vs vin; transfer function
 plot i(vmeas2) i(v.x1.vmeas1) i(v.x1.vmeas2) i(v.x1.vmeas3); internal current biases
 
 plot @m.x1.xm1.m0[gm] @m.x1.xm2.m0[gm]
 plot 1/@m.x1.xm2.m0[gds] 1/@m.x1.xm5.m0[gds]
 
-ac dec 10 1 200Meg
+ac dec 10 1 10G
 let gain = vout/vin;
 
 plot vdb(gain) ; ac gain

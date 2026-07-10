@@ -132,7 +132,7 @@ N 750 -700 750 -640 {lab=#net1
 C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {symbols/nfet_03v3.sym} 730 -500 0 0 {name=M1
 L=0.28u
-W=45u
+W=80u
 nf=8
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -157,7 +157,7 @@ C {lab_wire.sym} 1060 -430 0 1 {name=p8 sig_type=std_logic lab=Vout
 }
 C {symbols/pfet_03v3.sym} 1040 -600 0 0 {name=M2
 L=0.28u
-W=65u
+W=25u
 nf=10
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -173,7 +173,7 @@ C {lab_wire.sym} 1080 -650 0 1 {name=p7 sig_type=std_logic lab=VDD
 }
 C {symbols/pfet_03v3.sym} 730 -770 0 0 {name=M3
 L=1u
-W=10u
+W=20u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -203,7 +203,7 @@ C {lab_wire.sym} 400 -640 0 1 {name=p10 sig_type=std_logic lab=i_ref_100u
 }
 C {symbols/nfet_03v3.sym} 1040 -280 0 0 {name=M5
 L=1u
-W=20u
+W=40u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
