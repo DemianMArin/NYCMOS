@@ -128,7 +128,7 @@ print i(vmeas1)
 print v(ifp) v(ifm)
 
 
-;tran 0.01n 2u ;transient sim
+tran 0.01n 2u ;transient sim
 let vrf = V(RF_p)-V(RF_m)
 let vif = V(IFp)-V(IFm)
 

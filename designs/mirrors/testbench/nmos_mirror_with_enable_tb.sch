@@ -44,7 +44,7 @@ N 930 -840 930 -830 {lab=#net1}
 N 600 -670 600 -650 {lab=VDD}
 N 600 -520 600 -500 {lab=0}
 C {title.sym} 170 -40 0 0 {name=l1 author="Charbel El Haddad"}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/nmos_mirror_with_enable.sym} 360 -540 0 0 {name=x1}
+C {mirrors/schematic/nmos_mirror_with_enable.sym} 360 -540 0 0 {name=x1}
 C {vsource.sym} 500 -610 0 0 {name=V1 value=3.3 savecurrent=false}
 C {gnd.sym} 500 -480 0 0 {name=l2 lab=0}
 C {lab_wire.sym} 740 -750 0 0 {name=p1 sig_type=std_logic lab=EN1}
@@ -53,9 +53,9 @@ C {lab_wire.sym} 860 -760 0 0 {name=p3 sig_type=std_logic lab=EN2}
 C {lab_wire.sym} 980 -750 0 0 {name=p4 sig_type=std_logic lab=EN3}
 C {lab_wire.sym} 860 -420 0 0 {name=p5 sig_type=std_logic lab=EN2_B}
 C {lab_wire.sym} 980 -420 0 0 {name=p6 sig_type=std_logic lab=EN3_B}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/inv.sym} 1340 -790 0 0 {name=x2}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/inv.sym} 1340 -530 0 0 {name=x3}
-C {/foss/designs/NYCMOS/designs/mirrors/schematic/inv.sym} 1340 -300 0 0 {name=x4}
+C {digital/schematic/inv.sym} 1340 -790 0 0 {name=x2}
+C {digital/schematic/inv.sym} 1340 -530 0 0 {name=x3}
+C {digital/schematic/inv.sym} 1340 -300 0 0 {name=x4}
 C {vdd.sym} 500 -670 0 0 {name=l3 lab=VDD}
 C {vdd.sym} 1340 -850 0 0 {name=l4 lab=VDD}
 C {vdd.sym} 1340 -590 0 0 {name=l5 lab=VDD}

@@ -153,8 +153,8 @@ N 660 -500 660 -430 {lab=Vin}
 C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {symbols/nfet_03v3.sym} 730 -500 0 0 {name=M1
 L=0.28u
-W=45u
-nf=8
+W=60u
+nf=10
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
