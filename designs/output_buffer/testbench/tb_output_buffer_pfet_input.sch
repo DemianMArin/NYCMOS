@@ -15,7 +15,6 @@ N 260 -280 350 -280 {lab=0}
 N 40 -280 140 -280 {lab=0}
 N 40 -390 40 -330 {lab=0}
 N 480 -520 580 -520 {lab=Vout}
-N 580 -380 580 -330 {lab=0}
 N 350 -280 580 -280 {lab=0}
 N 40 -330 40 -280 {lab=0}
 N 140 -330 140 -280 {lab=0}
@@ -34,22 +33,23 @@ N 260 -510 300 -510 {lab=V_i_ref}
 N 140 -530 140 -450 {lab=Vin}
 N 140 -530 300 -530 {lab=Vin}
 N 470 -520 480 -520 {lab=Vout}
-N 580 -460 580 -380 {lab=0}
 N 680 -460 680 -380 {lab=0}
 N 780 -460 780 -380 {lab=0}
 N 350 -430 350 -370 {lab=0}
+N 580 -410 580 -390 {lab=#net2}
+N 580 -520 580 -470 {lab=Vout}
 C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {isource.sym} 260 -390 2 0 {name=I_ref_100u value=1m
 }
 C {vsource.sym} 140 -420 0 0 {name=Vin value="DC 1.1 AC 1" savecurrent=false}
 C {vsource.sym} 40 -520 0 0 {name=VDD value="PAR_VDD" savecurrent=false}
 C {gnd.sym} 180 -280 0 0 {name=l2 lab=0}
-C {res.sym} 580 -490 0 0 {name=R1
+C {res.sym} 580 -360 0 0 {name=R1
 value=50
 footprint=1206
 device=resistor
 m=1
-}
+spice_ignore=true}
 C {code_shown.sym} 0 100 0 0 {name=MODELS5 only_toplevel=true  
 format="tcleval( @value )" 
 value="
@@ -80,9 +80,9 @@ write tb_output_buffer.raw
 
 dc Vin 0.1 3.3 0.01
 
-plot Vout Vin ; input, output
-plot Vout vs Vin ; transfer function
-plot i(vmeas2) i(v.x1.vmeas4) i(v.x1.vmeas5) i(v.x1.vmeas6) i(v.x1.v_i_bias_pmos) i(v.x1.v_i_bias_nmos); internal current biases 
+plot Vout Vin x1.v_feedback_gate; input, output
+plot Vout vs Vin deriv(vout) vs vin; transfer function
+plot i(vmeas2) i(vmeas) i(v.x1.vmeas4) i(v.x1.vmeas5) i(v.x1.vmeas6) ;i(v.x1.v_i_bias_pmos) i(v.x1.v_i_bias_nmos); internal current biases 
 
 plot @m.x1.xm8.m0[gm] @m.x1.xm9.m0[gm]
 plot 1/@m.x1.xm9.m0[gds] 1/@m.x1.xm10.m0[gds]
@@ -112,3 +112,4 @@ footprint=1206
 device="ceramic capacitor"
 spice_ignore=true}
 C {output_buffer/schematic/output_buffer_pfet_input.sym} 320 -520 0 0 {name=x1}
+C {ammeter.sym} 580 -440 0 0 {name=Vmeas savecurrent=true spice_ignore=0}

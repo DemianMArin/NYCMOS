@@ -156,7 +156,7 @@ print @m.x2.x2.xm2.m0[vdsat]
 
 print i(vmeas)
 
-tran 0.01n 2u ;transient sim
+tran 1n 2u ;transient sim
 let vrf = V(RF_p)-V(RF_m)
 let vif = V(IFp)-V(IFm)
 
@@ -164,9 +164,13 @@ plot V(LO_p)
 plot vrf
 plot vif
 
+plot i(v.x1.v_i_ifp) i(v.x1.v_i_ifm) LO_P ifp xlimit 100n 140n
+
 fft vif vrf
 
-plot mag(vif) vs frequency
+let vif_mag = mag(vif)
+
+plot vdb(vif_mag) vs frequency xlimit 0 1G
 .endc
 "}
 C {isource.sym} 320 -330 0 0 {name=I0 value=100u}
@@ -175,7 +179,6 @@ C {vdd.sym} 180 -600 0 0 {name=l9 lab=VDD}
 C {gnd.sym} 320 -280 0 0 {name=l10 lab=0}
 C {noconn.sym} 630 -730 0 0 {name=l11}
 C {gnd.sym} 410 -800 0 0 {name=l12 lab=0}
-C {mixer/schematic/mixer.sym} 430 -900 0 0 {name=x1}
 C {ammeter.sym} 460 -800 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {mirrors/schematic/mirror_network_with_enable.sym} -170 -430 0 0 {name=x2}
 C {lab_wire.sym} 930 -600 0 0 {name=p11 sig_type=std_logic lab=EN0}
@@ -184,7 +187,7 @@ C {lab_wire.sym} 950 -560 0 0 {name=p13 sig_type=std_logic lab=EN2}
 C {lab_wire.sym} 940 -500 0 0 {name=p14 sig_type=std_logic lab=EN0_B}
 C {lab_wire.sym} 940 -480 0 0 {name=p15 sig_type=std_logic lab=EN1_B}
 C {lab_wire.sym} 940 -460 0 0 {name=p16 sig_type=std_logic lab=EN2_B}
-C {vsource.sym} 1550 -430 0 1 {name=V2 value=3.3 savecurrent=false}
+C {vsource.sym} 1550 -430 0 1 {name=V2 value=0 savecurrent=false}
 C {vsource.sym} 1440 -430 0 1 {name=V3 value=3.3 savecurrent=false}
 C {lab_wire.sym} 1550 -490 0 1 {name=p23 sig_type=std_logic lab=C0}
 C {lab_wire.sym} 1440 -480 0 1 {name=p24 sig_type=std_logic lab=C1}
@@ -192,3 +195,4 @@ C {gnd.sym} 1440 -350 0 0 {name=l15 lab=0}
 C {digital/schematic/decoder.sym} 1150 -530 0 1 {name=x3}
 C {gnd.sym} 1150 -380 0 0 {name=l13 lab=0}
 C {vdd.sym} 1150 -670 0 0 {name=l14 lab=VDD}
+C {mixer/schematic/Lei_mixer.sym} 430 -900 0 0 {name=x1}

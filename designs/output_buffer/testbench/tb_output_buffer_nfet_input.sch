@@ -35,7 +35,7 @@ C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {output_buffer/schematic/output_buffer.sym} 390 -540 0 0 {name=x1}
 C {isource.sym} 260 -490 0 0 {name=I_ref_100u value=100u
 }
-C {vsource.sym} 140 -520 0 0 {name=Vin value="DC 1.1 AC 1" savecurrent=false}
+C {vsource.sym} 140 -520 0 0 {name=Vin value="DC 1.35 AC 1" savecurrent=false}
 C {vsource.sym} 40 -520 0 0 {name=VDD value="PAR_VDD" savecurrent=false}
 C {gnd.sym} 180 -380 0 0 {name=l2 lab=0}
 C {res.sym} 580 -510 0 0 {name=R1
@@ -73,9 +73,11 @@ save @m.x1.xm5.m0[gds]
 write tb_output_buffer.raw
 
 dc Vin 0.1 3.3 0.01
+let gain_slope = deriv(vout)
 
 plot Vin Vout ; input, output
-plot Vout vs Vin deriv(vout) vs vin; transfer function
+plot Vout vs Vin gain_slope vs vin; output vs input and slope of gain
+plot vdb(gain_slope) vs vin; gain slope in db
 plot i(vmeas2) i(v.x1.vmeas1) i(v.x1.vmeas2) i(v.x1.vmeas3); internal current biases
 
 plot @m.x1.xm1.m0[gm] @m.x1.xm2.m0[gm]
