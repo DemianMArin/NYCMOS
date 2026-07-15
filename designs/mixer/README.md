@@ -30,7 +30,9 @@ This block implements a double-balanced active Gilbert-cell mixer for RF downcon
 All reported input powers (dBm), IIP3, and P1dB are referenced to an equivalent 50 Ohm source impedance for comparison with standard RF mixer specifications.
 
 ### Third-Order Intercept (IIP3)
-[`docs/notebooks/iip3_analysis.ipynb`](../..notebooks/iip3_analysis.ipynb)
+
+[`notebooks/iip3_analysis.ipynb`](../../notebooks/iip3_analysis.ipynb)
+
 The mixer was characterized using a two-tone test. IIP3 was extracted using two methods:
 1. Point-wise calculation at each input power level within the linear region.
 2. Linear regression of the fundamental and IM3 responses, with the intercept taken as the IIP3.
@@ -49,7 +51,8 @@ The point-wise method captures the local behavior of the circuit, while the fitt
 </p>
 
 ### 1 dB Compression Point
-[`docs/notebooks/p1db_analysis.ipynb`](../..notebooks/p1db_analysis.ipynb)
+
+[`notebooks/p1db_analysis.ipynb`](../../notebooks/p1db_analysis.ipynb)
 
 The conversion gain was swept versus input power to determine the input-referred 1 dB compression point (P1dB).
 
