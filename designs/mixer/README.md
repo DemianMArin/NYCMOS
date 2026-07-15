@@ -12,7 +12,7 @@ This block implements a double-balanced active Gilbert-cell mixer for RF downcon
 | LO Frequency | 75 MHz |
 | IF Frequency | 25 MHz |
 | RF Input | Differential |
-| LO Input | 0-3.3 Differential outputs of LO divider |
+| LO Input | Differential outputs of LO divider |
 | Load Resistance | 6.8 kOhm |
 | Tail Current | 500 µA |
 
