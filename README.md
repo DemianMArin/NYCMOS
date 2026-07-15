@@ -28,33 +28,21 @@ The platform consists of:
 - External student-designed BPF/LPF networks
 
 ## Team
- | Member | Responsibilities |
+ | Member | Background |
  |--------|------------------|
- | Demian | Output buffer |
- | Lei | Divider design, mode select logic |
- | Charbel | Mixer design, input buffer |
-
-## Current Status
-
-### Completed
-- Divider Schematic
-
-### In Progress
-- Divider Testbench
-- Mixer schematic
-
-### Upcoming
-- Mixer testbench
-- Input buffer design
-- Mode select logic 
-- Top-level integration
+ | Demian | RF front-end design in Cadence Virtuoso |
+ | Lei | RF/Analog design in cadence virtuoso. Amplifiers/LO design |
+ | Charbel | Former EE @ Amogy, MSEE @ NYU Tandon, RF front-end design |
 
 ## Repository Structure
 
-- `docs/` -  proposal materials, references, and meeting notes
+- `docs/` -  proposal materials, images, and notes
+- `notebooks/` - Jupyter notebooks for post-processing
 - `designs/` - circuit blocks, including schematics, layouts, and testbenches
   - `mixer/`
   - `divider/`
+  - `digital/`
+  - `mirrors/`
   - `input_buffer/`
   - `output_buffer/`
   - `mode_decoder/`
@@ -66,3 +54,4 @@ The platform consists of:
 
 - [Proposal Presentation](https://docs.google.com/presentation/d/1ySrDNINa8G7hdXDCi9I0f6ue9poP8fiGctQKzkyGpoE/edit?usp=sharing)
 - [Task Tracker](https://docs.google.com/spreadsheets/d/1Od1J7DOz2SekQrFCoG0DU00RiTUWZIC1DUhUMYMRFoQ/edit?usp=sharing)
+- [Schematic Review](https://docs.google.com/presentation/d/1cAe4NSLdh8lAJEL3O53wrl0M-dmPTIBj-l6jvWuCRDw/edit?slide=id.g3efc99ab0d8_0_47#slide=id.g3efc99ab0d8_0_47)
