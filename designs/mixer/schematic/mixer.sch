@@ -29,7 +29,6 @@ N 180 -800 180 -750 {lab=VDD}
 N 100 -570 140 -570 {lab=LO_p}
 N 510 -570 550 -570 {lab=LO_m}
 N 700 -570 730 -570 {lab=LO_m}
-N 1130 -570 1170 -570 {lab=LO_p}
 N 970 -420 1000 -420 {lab=RF_m
 spice_ignore=short}
 N 550 -570 700 -570 {lab=LO_m}
@@ -61,6 +60,7 @@ N 330 -360 620 -360 {lab=Itail}
 N 330 -390 330 -360 {lab=Itail}
 N 330 -420 410 -420 {lab=VSS}
 N 200 -720 1070 -720 {lab=VSS}
+N 1130 -570 1180 -570 {lab=LO_p}
 C {title.sym} 160 -40 0 0 {name=l1 author="NYCMOS-Charbel El Haddad"}
 C {symbols/nfet_03v3.sym} 310 -420 0 0 {name=M1
 L=0.28u
@@ -146,7 +146,6 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {lab_wire.sym} 1160 -570 0 0 {name=p4 sig_type=std_logic lab=LO_p}
 C {iopin.sym} 1230 -850 0 0 {name=p8 lab=VDD}
 C {ipin.sym} 1430 -790 0 0 {name=p3 lab=LO_p}
 C {ipin.sym} 1430 -760 0 0 {name=p1 lab=LO_m}
@@ -167,7 +166,6 @@ C {lab_wire.sym} 610 -570 0 0 {name=p19 sig_type=std_logic lab=LO_m}
 C {lab_wire.sym} 100 -570 0 0 {name=p20 sig_type=std_logic lab=LO_p}
 C {lab_wire.sym} 280 -420 0 0 {name=p21 sig_type=std_logic lab=RF_p}
 C {lab_wire.sym} 1010 -420 0 0 {name=p22 sig_type=std_logic lab=RF_m}
-C {lab_wire.sym} 180 -640 0 0 {name=p24 sig_type=std_logic lab=IF_m}
 C {lab_wire.sym} 1090 -640 0 0 {name=p25 sig_type=std_logic lab=IF_p}
 C {lab_wire.sym} 620 -230 0 0 {name=p23 sig_type=std_logic lab=Itail}
 C {lab_wire.sym} 390 -420 0 0 {name=p12 sig_type=std_logic lab=VSS}
@@ -184,3 +182,5 @@ model=ppolyf_u_1k
 spiceprefix=X
 m=1}
 C {lab_wire.sym} 850 -720 0 0 {name=p26 sig_type=std_logic lab=VSS}
+C {lab_wire.sym} 180 -650 0 0 {name=p4 sig_type=std_logic lab=IF_m}
+C {lab_wire.sym} 1150 -570 0 0 {name=p24 sig_type=std_logic lab=LO_p}
