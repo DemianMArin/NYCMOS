@@ -80,7 +80,7 @@ print @m.x1.xm3.m0[vdsat]
 print V(Vtail)
 print V(IFp)
 
-tran 0.01n 2u ;transient sim
+tran 1n 20u ;transient sim
 let vrf = V(RF_p)-V(RF_m)
 let vif = V(IFp)-V(IFm)
 

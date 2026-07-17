@@ -19,10 +19,9 @@ N 380 -520 390 -520 {lab=in}
 N 650 -520 720 -520 {lab=out}
 N 510 -720 510 -660 {lab=#net1}
 N 510 -390 510 -330 {lab=EN}
-N 350 -800 350 -520 {lab=in}
-N 350 -800 360 -800 {lab=in}
-N 360 -850 360 -800 {lab=in}
-N 360 -800 360 -750 {lab=in}
+N 350 -800 360 -800 {lab=EN}
+N 360 -850 360 -800 {lab=EN}
+N 360 -800 360 -750 {lab=EN}
 N 400 -820 400 -780 {lab=#net1}
 N 400 -800 510 -800 {lab=#net1}
 N 510 -800 510 -720 {lab=#net1}
@@ -98,3 +97,4 @@ spiceprefix=X
 }
 C {lab_wire.sym} 430 -690 0 1 {name=p7 sig_type=std_logic lab=VSS}
 C {lab_wire.sym} 430 -910 0 1 {name=p5 sig_type=std_logic lab=VDD}
+C {lab_wire.sym} 350 -800 0 0 {name=p8 sig_type=std_logic lab=EN}
