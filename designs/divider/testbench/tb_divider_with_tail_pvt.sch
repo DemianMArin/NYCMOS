@@ -14,26 +14,26 @@ N 210 -170 550 -170 {lab=0}
 N 10 -470 10 -400 {lab=VDD}
 N 10 -480 10 -470 {lab=VDD}
 N 10 -480 550 -480 {lab=VDD}
-N 210 -390 400 -390 {lab=V_LO_REF}
+N 210 -400 400 -400 {lab=V_LO_REF}
 N 700 -420 810 -420 {lab=V_LOI_p}
 N 810 -520 810 -420 {lab=V_LOI_p}
-N 700 -400 830 -400 {lab=V_LOI_n}
-N 830 -400 840 -400 {lab=V_LOI_n}
-N 840 -520 840 -400 {lab=V_LOI_n}
+N 700 -400 830 -400 {lab=V_LOI_m}
+N 830 -400 840 -400 {lab=V_LOI_m}
+N 840 -520 840 -400 {lab=V_LOI_m}
 N 900 -520 940 -520 {lab=0}
 N 710 -520 750 -520 {lab=0}
 N 900 -260 940 -260 {lab=0}
 N 710 -260 750 -260 {lab=0}
 N 700 -360 840 -360 {lab=V_LOQ_p}
 N 840 -360 840 -260 {lab=V_LOQ_p}
-N 700 -340 810 -340 {lab=V_LOQ_n}
-N 810 -340 810 -260 {lab=V_LOQ_n}
+N 700 -340 810 -340 {lab=V_LOQ_m}
+N 810 -340 810 -260 {lab=V_LOQ_m}
 N 230 -220 230 -170 {lab=0}
 N 230 -350 230 -280 {lab=V_EN}
-N 230 -370 400 -370 {lab=V_EN}
-N 230 -370 230 -350 {lab=V_EN}
-N -370 -390 -370 -350 {lab=#net1}
-N -370 -390 -320 -390 {lab=#net1}
+N 230 -380 400 -380 {lab=V_EN}
+N 230 -380 230 -360 {lab=V_EN}
+N -370 -390 -370 -350 {lab=V_LO_REF_unbuffered}
+N -370 -390 -320 -390 {lab=V_LO_REF_unbuffered}
 N -370 -290 -370 -250 {lab=0}
 N -220 -390 -180 -390 {lab=V_LO_REF
 }
@@ -41,6 +41,13 @@ N -270 -470 -270 -430 {lab=VDD
 }
 N -270 -350 -270 -320 {lab=0
 }
+N 230 -360 230 -350 {lab=V_EN}
+N 350 -360 400 -360 {lab=#net1}
+N 350 -360 350 -340 {lab=#net1}
+N 350 -200 350 -190 {lab=VDD}
+N 350 -190 410 -190 {lab=VDD}
+N 350 -340 350 -300 {lab=#net1}
+N 350 -240 350 -200 {lab=VDD}
 C {title.sym} 160 -30 0 0 {name=LO Divider author="Lei Chen"}
 C {code_shown.sym} 0 570 0 0 {name=NGSPICE only_toplevel=false value="
 ** PARAMS 
@@ -50,20 +57,20 @@ C {code_shown.sym} 0 570 0 0 {name=NGSPICE only_toplevel=false value="
 .control
 destroy all
 save all
-write tb_divider.raw
+write tb_divider_with_tail.raw
 
 op
 print v(V_LOI_p) v(V_LOI_n)
 
 
 ;transient analysis
-tran 0.1us 100us
+tran 0.001n 200n
  
-let V_LOI = v_loi_p - v_loi_n
-let V_LOQ = v_loq_p - v_loq_n
+let V_LOI = v_loi_p - v_loi_m
+let V_LOQ = v_loq_p - v_loq_m
 
-plot v(V_LO_REF) v(V_LOI_p)+4 v(V_LOI_n)+4  v(V_LOQ_p)-4 v(V_LOQ_n)-4 ;xlimit 10n 20n;plot divider output
-plot v(V_LO_REF) V_LOI V_LOQ ;xlimit 10n 20n; plot differential output
+plot v(V_LO_REF) v(V_LOI_p)+4 v(V_LOI_m)+4  v(V_LOQ_p)-4 v(V_LOQ_m)-4 ;xlimit 10n 20n;plot divider output
+plot v(V_LO_REF) V_LOI+4 V_LOQ+8 ;xlimit 10n 20n; plot differential output
 ;plot v(V_EN) v(x1.EN_BAR) v(x1.LO_REF_GATED) v(x1.LO_REF_BAR); plot enable signal and clock signal status
 
 plot i(vdd)*3.3 ;transient power
@@ -76,7 +83,7 @@ meas tran t_diff TRIG v(V_LOI) VAL=0 TD=10n RISE=1 TARG v(V_LOQ) VAL=0 TD=10n RI
 ;fft of input and output 
 linearize v(V_LOI) v(v_loq)
 fft v(V_LOI) v(v_loq)
-plot mag(v(V_LOI)) vs frequency mag(v(v_loq)) vs frequency
+plot db(v_loi) db(v_loq) xlimit 1 5G
 
 
 let V_LOI_MAG = mag(V_LOI)
@@ -131,18 +138,15 @@ footprint=1206
 device="ceramic capacitor"}
 C {lab_wire.sym} 750 -420 0 0 {name=p3 sig_type=std_logic lab=V_LOI_p
 }
-C {lab_wire.sym} 790 -400 0 0 {name=p4 sig_type=std_logic lab=V_LOI_n}
+C {lab_wire.sym} 790 -400 0 0 {name=p4 sig_type=std_logic lab=V_LOI_m}
 C {lab_wire.sym} 760 -360 0 0 {name=p5 sig_type=std_logic lab=V_LOQ_p}
-C {lab_wire.sym} 800 -340 0 0 {name=p6 sig_type=std_logic lab=V_LOQ_n}
+C {lab_wire.sym} 800 -340 0 0 {name=p6 sig_type=std_logic lab=V_LOQ_m}
 C {lab_wire.sym} 730 -260 0 0 {name=p7 sig_type=std_logic lab=0}
 C {lab_wire.sym} 920 -260 0 0 {name=p8 sig_type=std_logic lab=0}
 C {lab_wire.sym} 740 -520 0 0 {name=p9 sig_type=std_logic lab=0}
 C {lab_wire.sym} 930 -520 0 0 {name=p10 sig_type=std_logic lab=0}
-C {vsource.sym} 350 -250 0 0 {name=V_EN value="DC 0 AC 0 pulse( 0m 'PAR_VDD' 0 100p 100p 25n 50n )" savecurrent=false
-spice_ignore=true}
-C {lab_wire.sym} 330 -370 0 0 {name=p11 sig_type=std_logic lab=V_EN}
-C {vsource.sym} 230 -250 0 0 {name=VDD1 value="PAR_VDD" savecurrent=false}
-C {divider/schematic/divider.sym} 550 -380 0 0 {name=x1}
+C {lab_wire.sym} 330 -380 0 0 {name=p11 sig_type=std_logic lab=V_EN}
+C {vsource.sym} 230 -250 0 0 {name=VDD1 value=3.3 savecurrent=false}
 C {code_shown.sym} 0 70 0 0 {name=MODELS5 only_toplevel=true  
 format="tcleval( @value )" 
 value="
@@ -208,7 +212,7 @@ value="
 .lib $::180MCU_MODELS/sm141064.ngspice mimcap_typical
 "
 spice_ignore=true}
-C {vsource.sym} -370 -320 0 0 {name=V_LO_REF1 value="DC 0 pulse(0 3.3 0 500p 500p 500n 1u)" savecurrent=false}
+C {vsource.sym} -370 -320 0 0 {name=V_LO_REF1 value="DC 0 pulse(0 3.3 0 50p 50p 2.5n 5n)" savecurrent=false}
 C {lab_wire.sym} -370 -250 0 0 {name=p12 sig_type=std_logic lab=0}
 C {simulation_parasitics/schematics/digital_input_buffer.sym} -270 -390 0 0 {name=x7
 }
@@ -216,8 +220,8 @@ C {lab_wire.sym} -270 -450 0 1 {name=p30 sig_type=std_logic lab=VDD
 }
 C {lab_wire.sym} -270 -320 0 0 {name=p32 sig_type=std_logic lab=0
 }
-C {lab_wire.sym} 290 -390 0 0 {name=p13 sig_type=std_logic lab=V_LO_REF}
-C {code_shown.sym} -2000 -150 0 0 {name=NGSPICE1 only_toplevel=false value="
+C {lab_wire.sym} 290 -400 0 0 {name=p13 sig_type=std_logic lab=V_LO_REF}
+C {code_shown.sym} -800 70 0 0 {name=NGSPICE1 only_toplevel=false value="
 ** PARAMS 
 
 .PARAM PAR_VDD=3.3
@@ -231,12 +235,26 @@ op
 
 
 ;transient analysis
-tran 0.1us 100us
+tran .001n 100n
  
-let V_LOI = v_loi_p - v_loi_n
-let V_LOQ = v_loq_p - v_loq_n
+let V_LOI = v_loi_p-v_loi_m
+let V_LOQ = v_loq_p-v_loq_m
 
-plot x1.lo_i_p_internal x1.vb v_loi_p v_lo_ref xlimit 0 100u
+plot x1.lo_q_p_internal x1.lo_q_m_internal
+
+plot x1.lo_i_p_internal x1.va v_loi_p v_lo_ref+4; xlimit 0 100u
+plot x1.lo_i_m_internal x1.vb v_loi_m v_lo_ref+4; xlimit 0 100u
+
+plot i(vdd)
+
+plot i(v.x1.v_i_1) i(v.x1.v_i_2)
+plot i(v.x1.v_i_buf_1) i(v.x1.v_i_buf_2)
+plot i(v.x1.v_i_tail_1) i(v.x1.v_i_tail_2)
 .endc
 "
 spice_ignore=true}
+C {divider/schematic/divider_with_tail.sym} 550 -380 0 0 {name=x1}
+C {lab_wire.sym} 390 -190 0 1 {name=p14 sig_type=std_logic lab=VDD}
+C {isource.sym} 350 -270 2 0 {name=I0 value=0}
+C {lab_wire.sym} -340 -390 0 0 {name=p15 sig_type=std_logic lab=V_LO_REF_unbuffered
+}

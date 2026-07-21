@@ -119,43 +119,52 @@ N 2280 -1040 2590 -1040 {lab=0}
 N 2280 -1280 2590 -1280 {lab=0}
 N 600 -1320 640 -1320 {lab=VDD}
 N 700 -1320 750 -1320 {lab=VDD}
-N 920 -1320 930 -1320 {lab=#net5}
+N 920 -1320 930 -1320 {lab=VDD}
 N 930 -1220 930 -1200 {lab=VDD_on_chip}
-N 930 -1320 930 -1280 {lab=#net5}
+N 930 -1320 930 -1280 {lab=VDD}
 N 640 -1320 700 -1320 {lab=VDD}
-N 1080 -1070 1110 -1070 {lab=#net6}
-N 1080 -1050 1110 -1050 {lab=#net7}
-N 1080 -1030 1110 -1030 {lab=#net8}
-N 1080 -1010 1110 -1010 {lab=#net9}
-N 1080 -970 1110 -970 {lab=#net10}
-N 1080 -950 1110 -950 {lab=#net11}
-N 1080 -930 1110 -930 {lab=#net12}
-N 1080 -910 1110 -910 {lab=#net13}
+N 1080 -1070 1110 -1070 {lab=#net5}
+N 1080 -1050 1110 -1050 {lab=#net6}
+N 1080 -1030 1110 -1030 {lab=#net7}
+N 1080 -1010 1110 -1010 {lab=#net8}
+N 1080 -970 1110 -970 {lab=#net9}
+N 1080 -950 1110 -950 {lab=#net10}
+N 1080 -930 1110 -930 {lab=#net11}
+N 1080 -910 1110 -910 {lab=#net12}
 N 1240 -1050 1300 -1050 {lab=IF_I_m}
 N 1240 -1070 1300 -1070 {lab=IF_I_p}
 N 1300 -1170 1300 -1130 {lab=0}
 N 1300 -990 1300 -940 {lab=0}
-N 1490 -1130 1490 -1090 {lab=0}
-N 1490 -950 1490 -900 {lab=0}
-N 1420 -1010 1490 -1010 {lab=IF_Q_m}
-N 1420 -1030 1490 -1030 {lab=IF_Q_p}
+N 1400 -1170 1400 -1130 {lab=0}
+N 1400 -990 1400 -940 {lab=0}
+N 1330 -1050 1400 -1050 {lab=IF_Q_m}
+N 1330 -1070 1400 -1070 {lab=IF_Q_p}
+N 1240 -790 1300 -790 {lab=BB_I_m}
+N 1240 -810 1300 -810 {lab=BB_I_p}
+N 1300 -910 1300 -870 {lab=0}
+N 1300 -730 1300 -680 {lab=0}
+N 1400 -910 1400 -870 {lab=0}
+N 1400 -730 1400 -680 {lab=0}
+N 1330 -790 1400 -790 {lab=BB_Q_m}
+N 1330 -810 1400 -810 {lab=BB_Q_p}
 C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {top_level/schematic/top.sym} 930 -990 0 0 {name=x1}
 C {vsource.sym} 570 -1320 1 0 {name=VDD value="PAR_VDD" savecurrent=false}
-C {vsource.sym} 50 -1270 0 0 {name=V_RF_p value="dc 1.3 ac 0.5 sin(1.3 1m 60MEG 0 0 0)" savecurrent=false}
+C {vsource.sym} 50 -1270 0 0 {name=V_RF_p value="dc 1.3 ac 0.5 sin(1.3 1m 70MEG 0 0 0)" savecurrent=false}
 C {res.sym} 890 -1320 1 0 {name=R_wire_sim
 value=10
 footprint=1206
 device=resistor
-m=1}
+m=1
+spice_ignore=short}
 C {gnd.sym} 480 -1320 0 0 {name=l2 lab=0}
 C {lab_wire.sym} 930 -830 0 0 {name=p1 sig_type=std_logic lab=0}
 C {lab_wire.sym} 50 -1200 0 0 {name=p2 sig_type=std_logic lab=0}
-C {vsource.sym} 50 -1080 0 0 {name=V_RF_m value="dc 1.3 ac 0.5 sin(1.3 1m 60MEG 0 0 180)" savecurrent=false}
+C {vsource.sym} 50 -1080 0 0 {name=V_RF_m value="dc 1.3 ac 0.5 sin(1.3 1m 70MEG 0 0 180)" savecurrent=false}
 C {lab_wire.sym} 50 -1010 0 0 {name=p3 sig_type=std_logic lab=0}
 C {vsource.sym} 50 -820 0 0 {name=V_LO_1 value="DC 0 pulse(0 3.3 0 500p 500p 5n 10n)" savecurrent=false}
 C {lab_wire.sym} 50 -750 0 0 {name=p4 sig_type=std_logic lab=0}
-C {vsource.sym} 350 -820 0 0 {name=V_LO_2 value=0 savecurrent=false}
+C {vsource.sym} 350 -820 0 0 {name=V_LO_2 value="DC 0 pulse(0 3.3 0 500p 500p 25n 50n)" savecurrent=false}
 C {lab_wire.sym} 350 -750 0 0 {name=p5 sig_type=std_logic lab=0}
 C {vsource.sym} 50 -450 0 0 {name=V_EN value=3.3 savecurrent=false}
 C {lab_wire.sym} 50 -380 0 0 {name=p6 sig_type=std_logic lab=0}
@@ -163,7 +172,7 @@ C {vsource.sym} 260 -450 0 0 {name=V_sel_2 value=0 savecurrent=false}
 C {lab_wire.sym} 260 -380 0 0 {name=p7 sig_type=std_logic lab=0}
 C {vsource.sym} 490 -450 0 0 {name=V_sel_1 value=0 savecurrent=false}
 C {lab_wire.sym} 490 -380 0 0 {name=p8 sig_type=std_logic lab=0}
-C {vsource.sym} 750 -450 0 0 {name=V_sel_0 value=0 savecurrent=false}
+C {vsource.sym} 750 -450 0 0 {name=V_sel_0 value=3.3 savecurrent=false}
 C {lab_wire.sym} 750 -380 0 0 {name=p9 sig_type=std_logic lab=0}
 C {isource.sym} 50 -280 2 0 {name=i_ref_100u value=100u}
 C {lab_wire.sym} 50 -210 0 0 {name=p10 sig_type=std_logic lab=0}
@@ -354,7 +363,7 @@ footprint=1206
 device=resistor
 m=1}
 C {lab_wire.sym} 1300 -1160 0 0 {name=p68 sig_type=std_logic lab=0}
-C {lab_wire.sym} 1300 -950 0 0 {name=p69 sig_type=std_logic lab=0}
+C {lab_wire.sym} 1300 -980 0 0 {name=p69 sig_type=std_logic lab=0}
 C {code_shown.sym} 540 330 0 0 {name="Transient Analysis - Single Stage Quadrature Mixer" only_toplevel=false value="
 ** PARAMS 
 
@@ -366,6 +375,7 @@ save all
 
 write tb_top.raw
 
+; 70 MHz RF, 100 MHz LO REF 1, LO REF 2 OFF
 tran .1n 2u 
 
 let vrf = V_rf_p - V_rf_m
@@ -410,20 +420,124 @@ plot db(v_lo_1_off_chip) db(x1.div_1_lo_i_p) xlimit 1 200MEG;
 
 .endc
 "
-}
-C {res.sym} 1490 -1060 0 0 {name=R3
+spice_ignore=true}
+C {res.sym} 1400 -1100 0 0 {name=R3
 value=50
 footprint=1206
 device=resistor
 m=1}
-C {res.sym} 1490 -980 2 0 {name=R4
+C {res.sym} 1400 -1020 2 0 {name=R4
 value=50
 footprint=1206
 device=resistor
 m=1}
-C {lab_wire.sym} 1490 -1120 0 0 {name=p70 sig_type=std_logic lab=0}
-C {lab_wire.sym} 1490 -910 0 0 {name=p71 sig_type=std_logic lab=0}
-C {lab_wire.sym} 1430 -1030 0 1 {name=p72 sig_type=std_logic lab=IF_Q_p}
-C {lab_wire.sym} 1430 -1010 0 1 {name=p73 sig_type=std_logic lab=IF_Q_m}
+C {lab_wire.sym} 1400 -1160 0 0 {name=p70 sig_type=std_logic lab=0}
+C {lab_wire.sym} 1400 -950 0 0 {name=p71 sig_type=std_logic lab=0}
+C {lab_wire.sym} 1340 -1070 0 1 {name=p72 sig_type=std_logic lab=IF_Q_p}
+C {lab_wire.sym} 1340 -1050 0 1 {name=p73 sig_type=std_logic lab=IF_Q_m}
 C {lab_wire.sym} 50 -890 0 1 {name=p74 sig_type=std_logic lab=V_LO_1_off_chip}
 C {lab_wire.sym} 390 -890 0 0 {name=p75 sig_type=std_logic lab=V_LO_2_off_chip}
+C {code_shown.sym} 2500 390 0 0 {name="Transient Analysis - Two Stage Quadrature Mixer" only_toplevel=false value="
+** PARAMS 
+
+.PARAM PAR_VDD=3.3
+
+.control
+destroy all
+save all
+
+write tb_top.raw
+
+; 70Mhz input, 100 MHz LO REF 1, 20 MHz LO REF 2
+
+tran .1n 2u 
+
+let vrf = V_rf_p - V_rf_m
+let vif_i = if_i_p - if_i_m
+let vif_q = if_q_p - if_q_m
+let vbb_i = bb_i_p - bb_i_m
+let vbb_q = bb_q_p - bb_q_m
+
+plot vrf   ;input signal
+plot vif_i ;output in phase
+plot vif_q ;output q phase
+plot vbb_i ;baseband inphase
+plot vbb_q ;baseband q phase
+plot v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m ;clock divider 1
+plot v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m ;clock divider 2
+
+meas tran i_vdd avg i(v_i_vdd_on_chip) from=.3u to=2u ;average vdd current from .3us to 2us
+meas tran i_mix_1 avg i(v.x1.v_i_mix_1) from=.3u to=2u ;average mixer 1 current from .3us to 2us
+meas tran i_mix_2 avg i(v.x1.v_i_mix_2) from=.3u to=2u ;average mixer 2 current from .3us to 2us
+meas tran i_mix_3 avg i(v.x1.v_i_mix_3) from=.3u to=2u ;average mixer 3 current from .3us to 2us
+meas tran i_mix_4 avg i(v.x1.v_i_mix_4) from=.3u to=2u ;average mixer 4 current from .3us to 2us
+meas tran i_buf_mix_1_p avg i(v.x1.v_i_buf_mix_1_p) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_1_m avg i(v.x1.v_i_buf_mix_1_m) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_2_p avg i(v.x1.v_i_buf_mix_2_p) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_2_m avg i(v.x1.v_i_buf_mix_2_m) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_3_p avg i(v.x1.v_i_buf_mix_3_p) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_3_m avg i(v.x1.v_i_buf_mix_3_m) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_4_p avg i(v.x1.v_i_buf_mix_4_p) from=.3u to=2u ;average buffer current from .3us to 2us
+meas tran i_buf_mix_4_m avg i(v.x1.v_i_buf_mix_4_m) from=.3u to=2u ;average buffer current from .3us to 2us
+
+plot i(v_i_vdd_on_chip) i(v.x1.v_i_mix_1) i(v.x1.v_i_mix_2) i(v.x1.v_i_mix_3) i(v.x1.v_i_mix_4) i(v.x1.v_i_buf_mix_1_p) i(v.x1.v_i_buf_mix_1_m) i(v.x1.v_i_buf_mix_2_p) i(v.x1.v_i_buf_mix_2_m) i(v.x1.v_i_buf_mix_3_p) i(v.x1.v_i_buf_mix_3_m) i(v.x1.v_i_buf_mix_4_p) i(v.x1.v_i_buf_mix_4_m); current in active blocks
+
+print i_vdd
+print i_mix_1
+print i_mix_2
+print i_mix_3
+print i_mix_4
+print i_buf_mix_1_p
+print i_buf_mix_1_m
+print i_buf_mix_2_p
+print i_buf_mix_2_m
+print i_buf_mix_3_p
+print i_buf_mix_3_m
+print i_buf_mix_4_p
+print i_buf_mix_4_m
+
+let i_blocks = i_mix_1+i_mix_2+i_mix_3+i_mix_4+i_buf_mix_1_p+i_buf_mix_1_m+i_buf_mix_2_p+i_buf_mix_2_m+i_buf_mix_3_p+i_buf_mix_3_m+i_buf_mix_4_p+i_buf_mix_4_m
+print i_vdd-i_blocks
+
+linearize vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m
+fft vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m 
+
+plot db(vrf) xlimit 1 200Meg; input signal
+plot db(vif_i) xlimit 1 200MEG;
+plot db(vif_q) xlimit 1 200MEG;
+plot db(vbb_i) xlimit 1 200MEG;
+plot db(vbb_q) xlimit 1 200MEG;
+plot db(v_lo_1_off_chip) db(x1.div_1_lo_i_p) xlimit 1 200MEG;
+plot db(v_lo_2_off_chip) db(x1.div_3_lo_i_p) xlimit 1 200MEG;
+
+.endc
+"
+}
+C {res.sym} 1300 -840 0 0 {name=R5
+value=50
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 1300 -760 2 0 {name=R6
+value=50
+footprint=1206
+device=resistor
+m=1}
+C {lab_wire.sym} 1300 -900 0 0 {name=p76 sig_type=std_logic lab=0}
+C {lab_wire.sym} 1300 -690 0 0 {name=p77 sig_type=std_logic lab=0}
+C {res.sym} 1400 -840 0 0 {name=R7
+value=50
+footprint=1206
+device=resistor
+m=1}
+C {res.sym} 1400 -760 2 0 {name=R8
+value=50
+footprint=1206
+device=resistor
+m=1}
+C {lab_wire.sym} 1400 -900 0 0 {name=p78 sig_type=std_logic lab=0}
+C {lab_wire.sym} 1400 -690 0 0 {name=p79 sig_type=std_logic lab=0}
+C {lab_wire.sym} 1330 -810 0 1 {name=p80 sig_type=std_logic lab=BB_Q_p}
+C {lab_wire.sym} 1330 -790 0 1 {name=p81 sig_type=std_logic lab=BB_Q_m}
+C {lab_wire.sym} 1240 -810 0 1 {name=p82 sig_type=std_logic lab=BB_I_p}
+C {lab_wire.sym} 1240 -790 0 1 {name=p83 sig_type=std_logic lab=BB_I_m}
