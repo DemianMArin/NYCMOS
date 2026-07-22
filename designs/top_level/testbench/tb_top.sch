@@ -119,18 +119,18 @@ N 2280 -1040 2590 -1040 {lab=0}
 N 2280 -1280 2590 -1280 {lab=0}
 N 600 -1320 640 -1320 {lab=VDD}
 N 700 -1320 750 -1320 {lab=VDD}
-N 920 -1320 930 -1320 {lab=VDD}
+N 920 -1320 930 -1320 {lab=#net5}
 N 930 -1220 930 -1200 {lab=VDD_on_chip}
-N 930 -1320 930 -1280 {lab=VDD}
+N 930 -1320 930 -1280 {lab=#net5}
 N 640 -1320 700 -1320 {lab=VDD}
-N 1080 -1070 1110 -1070 {lab=#net5}
-N 1080 -1050 1110 -1050 {lab=#net6}
-N 1080 -1030 1110 -1030 {lab=#net7}
-N 1080 -1010 1110 -1010 {lab=#net8}
-N 1080 -970 1110 -970 {lab=#net9}
-N 1080 -950 1110 -950 {lab=#net10}
-N 1080 -930 1110 -930 {lab=#net11}
-N 1080 -910 1110 -910 {lab=#net12}
+N 1080 -1070 1110 -1070 {lab=#net6}
+N 1080 -1050 1110 -1050 {lab=#net7}
+N 1080 -1030 1110 -1030 {lab=#net8}
+N 1080 -1010 1110 -1010 {lab=#net9}
+N 1080 -970 1110 -970 {lab=#net10}
+N 1080 -950 1110 -950 {lab=#net11}
+N 1080 -930 1110 -930 {lab=#net12}
+N 1080 -910 1110 -910 {lab=#net13}
 N 1240 -1050 1300 -1050 {lab=IF_I_m}
 N 1240 -1070 1300 -1070 {lab=IF_I_p}
 N 1300 -1170 1300 -1130 {lab=0}
@@ -156,7 +156,7 @@ value=10
 footprint=1206
 device=resistor
 m=1
-spice_ignore=short}
+}
 C {gnd.sym} 480 -1320 0 0 {name=l2 lab=0}
 C {lab_wire.sym} 930 -830 0 0 {name=p1 sig_type=std_logic lab=0}
 C {lab_wire.sym} 50 -1200 0 0 {name=p2 sig_type=std_logic lab=0}
@@ -459,12 +459,11 @@ let vbb_i = bb_i_p - bb_i_m
 let vbb_q = bb_q_p - bb_q_m
 
 plot vrf   ;input signal
-plot vif_i ;output in phase
-plot vif_q ;output q phase
-plot vbb_i ;baseband inphase
-plot vbb_q ;baseband q phase
-plot v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m ;clock divider 1
-plot v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m ;clock divider 2
+plot vif_i vif_q xlimit 0 200n;output output
+plot vbb_i vbb_q xlimit 0 200n;baseband output
+plot v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p-x1.div_1_lo_i_m xlimit 0 200n;clock divider 1
+plot v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p-x1.div_3_lo_i_m xlimit 0 200n;clock divider 2
+plot x1.mix_3_4_lo_i_p x1.div_3_lo_i_p x1.mix_3_4_lo_q_p x1.div_3_lo_q_p ; actual clock input signal
 
 meas tran i_vdd avg i(v_i_vdd_on_chip) from=.3u to=2u ;average vdd current from .3us to 2us
 meas tran i_mix_1 avg i(v.x1.v_i_mix_1) from=.3u to=2u ;average mixer 1 current from .3us to 2us
@@ -480,7 +479,7 @@ meas tran i_buf_mix_3_m avg i(v.x1.v_i_buf_mix_3_m) from=.3u to=2u ;average buff
 meas tran i_buf_mix_4_p avg i(v.x1.v_i_buf_mix_4_p) from=.3u to=2u ;average buffer current from .3us to 2us
 meas tran i_buf_mix_4_m avg i(v.x1.v_i_buf_mix_4_m) from=.3u to=2u ;average buffer current from .3us to 2us
 
-plot i(v_i_vdd_on_chip) i(v.x1.v_i_mix_1) i(v.x1.v_i_mix_2) i(v.x1.v_i_mix_3) i(v.x1.v_i_mix_4) i(v.x1.v_i_buf_mix_1_p) i(v.x1.v_i_buf_mix_1_m) i(v.x1.v_i_buf_mix_2_p) i(v.x1.v_i_buf_mix_2_m) i(v.x1.v_i_buf_mix_3_p) i(v.x1.v_i_buf_mix_3_m) i(v.x1.v_i_buf_mix_4_p) i(v.x1.v_i_buf_mix_4_m); current in active blocks
+plot avg(i(v_i_vdd_on_chip)) i(v.x1.v_i_mix_1) i(v.x1.v_i_mix_2) i(v.x1.v_i_mix_3) i(v.x1.v_i_mix_4) i(v.x1.v_i_buf_mix_1_p) i(v.x1.v_i_buf_mix_1_m) i(v.x1.v_i_buf_mix_2_p) i(v.x1.v_i_buf_mix_2_m) i(v.x1.v_i_buf_mix_3_p) i(v.x1.v_i_buf_mix_3_m) i(v.x1.v_i_buf_mix_4_p) i(v.x1.v_i_buf_mix_4_m); current in active blocks
 
 print i_vdd
 print i_mix_1
@@ -502,11 +501,9 @@ print i_vdd-i_blocks
 linearize vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m
 fft vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m 
 
-plot db(vrf) xlimit 1 200Meg; input signal
-plot db(vif_i) xlimit 1 200MEG;
-plot db(vif_q) xlimit 1 200MEG;
-plot db(vbb_i) xlimit 1 200MEG;
-plot db(vbb_q) xlimit 1 200MEG;
+;plot db(vrf) xlimit 1 200Meg; input signal
+plot db(vrf) db(vif_i) db(vif_q) xlimit 1 200MEG; IF output
+plot db(vrf) db(vbb_i) db(vbb_q) xlimit 1 200MEG; BB output
 plot db(v_lo_1_off_chip) db(x1.div_1_lo_i_p) xlimit 1 200MEG;
 plot db(v_lo_2_off_chip) db(x1.div_3_lo_i_p) xlimit 1 200MEG;
 

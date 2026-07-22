@@ -36,8 +36,8 @@ N 400 -850 430 -850 {lab=VDD}
 C {title.sym} 160 -30 0 0 {name=l1 author="Stefan Schippers"}
 C {symbols/pfet_03v3.sym} 510 -640 1 0 {name=M1
 L=0.28u
-W=6u
-nf=1
+W=12u
+nf=4
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -50,8 +50,8 @@ spiceprefix=X
 }
 C {symbols/nfet_03v3.sym} 510 -410 3 0 {name=M2
 L=0.28u
-W=3u
-nf=1
+W=6u
+nf=2
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
