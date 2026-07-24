@@ -83,16 +83,35 @@ plot @m.x1.xm1.m0[gm] @m.x1.xm2.m0[gm]
 ;plot 1/@m.x1.xm2.m0[gds] 1/@m.x1.xm5.m0[gds]
 
 ac dec 100 1 10G
-let gain = vout/vin;
-
-plot vdb(gain) ; ac gain and phase
-;plot vp(gain)*180/2/pi
+let gain = vout/vin
+let gain_db = db(gain)
+plot gain_db
  
 tran 0.1n 10u
 plot vin vout
 linearize vin vout
 fft vin vout
 plot db(vin) vs frequency db(vout) vs frequency xlimit 0 120MEG
+
+
+;parametric sweep for compensation capacitor
+
+;setplot const 
+;let start_c = 100f
+;let stop_c = 3p
+;let delta_c = 300f
+;let current_c = start_c
+
+;while current_c le stop_c
+;	print current_c
+;	alter c.x1.c2 = current_c
+;	ac dec 100 1 10G
+;	let gain = vout/vin;
+;	let gain_db = db(gain)
+;
+;	let current_c = current_c + delta_c
+;end
+;plot  ac2.gain_db ac3.gain_db ac4.gain_db ac5.gain_db ac6.gain_db ac7.gain_db ac8.gain_db ac9.gain_db ac10.gain_db ac11.gain_db
 .endc
 "
 }
@@ -113,3 +132,37 @@ value=10p
 footprint=1206
 device="ceramic capacitor"}
 C {ammeter.sym} 270 -630 3 0 {name=v_i_vdd savecurrent=true spice_ignore=0}
+C {code_shown.sym} 920 360 0 0 {name="Parametric Sweep for compensation capacitor" only_toplevel=false value="
+** PARAMS 
+
+.PARAM PAR_VDD=3.3
+
+.control
+destroy all
+save all
+save @m.x1.xm1.m0[gm]
+save @m.x1.xm2.m0[gm]
+save @m.x1.xm2.m0[gds]
+save @m.x1.xm5.m0[gds]
+
+let start_c = 100f
+let stop_c = 5p
+let delta_c = 500f
+let current_c = start_c
+
+write tb_output_buffer.raw
+
+while current_c le stop_c
+	print current_c
+	alter c.x1.c2 = current_c
+	ac dec 100 1 10G
+	let gain = vout/vin;
+	let gain_db = db(gain)
+
+	let current_c = current_c + delta_c
+end
+plot ac1.gain_db ac2.gain_db ac3.gain_db ac4.gain_db ac5.gain_db ac6.gain_db ac7.gain_db ac8.gain_db ac9.gain_db ac10.gain_db
+
+.endc
+"
+spice_ignore=true}

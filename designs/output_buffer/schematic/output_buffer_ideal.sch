@@ -5,8 +5,6 @@ V {}
 S {}
 F {}
 E {}
-T {3.2pF} 740 -400 0 0 0.4 0.4 {}
-T {0.8pf} 950 -570 0 0 0.4 0.4 {}
 N 750 -500 800 -500 {lab=VSS
 }
 N 750 -580 750 -530 {lab=VB
@@ -145,7 +143,7 @@ C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {symbols/nfet_03v3.sym} 730 -500 0 0 {name=M1
 L=0.28u
 W=4u
-nf=1
+nf=4
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -169,7 +167,7 @@ C {lab_wire.sym} 1060 -430 0 1 {name=p8 sig_type=std_logic lab=Vout
 }
 C {symbols/pfet_03v3.sym} 1040 -600 0 0 {name=M2
 L=0.28u
-W=40u
+W=60u
 nf=10
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
@@ -186,7 +184,7 @@ C {lab_wire.sym} 1080 -650 0 1 {name=p7 sig_type=std_logic lab=VDD
 C {symbols/pfet_03v3.sym} 730 -770 0 0 {name=M3
 L=0.5u
 W=6u
-nf=1
+nf=10
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -216,7 +214,7 @@ C {lab_wire.sym} 400 -640 0 1 {name=p10 sig_type=std_logic lab=i_ref_100u
 C {symbols/nfet_03v3.sym} 1040 -210 0 0 {name=M5
 L=.5u
 W=8u
-nf=2
+nf=10
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
 pd="'2*int((nf+1)/2) * (W/nf + 0.18u)'"
@@ -233,6 +231,12 @@ C {lab_wire.sym} 700 -830 0 1 {name=p12 sig_type=std_logic lab=VDD
 }
 C {ammeter.sym} 1060 -510 0 0 {name=vmeas2 savecurrent=true }
 C {ammeter.sym} 1060 -360 0 0 {name=Vmeas1 savecurrent=true }
+C {capa.sym} 920 -490 0 0 {name=C1
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"
+}
 C {symbols/pfet_03v3.sym} 600 -770 0 0 {name=M6
 L=0.5u
 W=6u
@@ -290,25 +294,13 @@ sa=0 sb=0 sd=0
 model=nfet_03v3
 spiceprefix=X
 }
-C {capa.sym} 550 -430 1 0 {name=C2
+C {capa.sym} 700 -430 1 0 {name=C2
 m=1
 value=8.1p
 footprint=1206
 device="ceramic capacitor"
-spice_ignore=true}
+}
 C {lab_wire.sym} 920 -600 0 1 {name=p15 sig_type=std_logic lab=VB
 }
 C {lab_wire.sym} 920 -210 0 1 {name=p16 sig_type=std_logic lab=VA
 }
-C {symbols/cap_mim_2f0fF.sym} 700 -430 1 0 {name=C3
-W=40e-6
-L=40e-6
-model=cap_mim_2f0fF
-spiceprefix=X
-m=1}
-C {symbols/cap_mim_2f0fF.sym} 920 -490 0 0 {name=C1
-W=20e-6
-L=20e-6
-model=cap_mim_2f0fF
-spiceprefix=X
-m=1}

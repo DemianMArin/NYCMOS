@@ -384,7 +384,7 @@ N 2020 -1090 2020 -1070 {lab=#net29}
 N 2020 -1210 2020 -1150 {lab=mix_2_IF_m_biased}
 N 1990 -1190 1990 -1140 {lab=mix_2_IF_p_biased}
 N 1380 -1590 1380 -1440 {lab=div_1_LO_I_p
-spice_ignore=true}
+}
 N 310 -980 360 -980 {lab=EN_div_2}
 N 310 -960 360 -960 {lab=EN_div_3}
 N 500 -1230 500 -1160 {lab=i_tail_mix_1}
@@ -405,10 +405,10 @@ N 1280 -1190 1280 -1160 {lab=i_div_2_100u}
 N 1340 -1170 1340 -1160 {lab=i_div_3_100u}
 N 1440 -1250 1480 -1250 {lab=div_1_LO_I_m}
 N 1420 -1230 1420 -1100 {lab=div_1_LO_Q_p
-spice_ignore=true}
+spice_ignore=short}
 N 1420 -1230 1480 -1230 {lab=div_1_LO_I_p}
 N 1440 -1250 1440 -1080 {lab=div_1_LO_Q_m
-spice_ignore=true}
+spice_ignore=short}
 N 1990 -1630 2020 -1630 {lab=mix_1_IF_p_biased}
 N 1990 -1610 2010 -1610 {lab=mix_1_IF_m_biased}
 N 2020 -1620 2020 -1590 {lab=mix_1_IF_p_biased}
@@ -420,7 +420,7 @@ N 1990 -1200 2040 -1200 {lab=mix_2_IF_p_biased}
 N 2020 -1210 2040 -1210 {lab=mix_2_IF_m_biased}
 N 1400 -1350 1400 -670 {lab=div_1_LO_I_m}
 N 1400 -1570 1400 -1350 {lab=div_1_LO_I_m
-spice_ignore=true}
+}
 C {title.sym} 160 -30 0 0 {name=l1 author="Lei Chen"}
 C {mixer/schematic/mixer.sym} 1630 -1600 0 0 {name=x1
 }
@@ -708,11 +708,3 @@ C {lab_wire.sym} 1340 -1170 0 1 {name=p181 sig_type=std_logic lab=i_div_3_100u}
 C {lab_wire.sym} 2080 -1230 0 0 {name=p132 sig_type=std_logic lab=mix_3_4_LO_Q_p}
 C {lab_wire.sym} 2080 -1250 0 0 {name=p133 sig_type=std_logic lab=mix_3_4_LO_Q_m}
 C {lab_wire.sym} 1700 -730 0 0 {name=p185 sig_type=std_logic lab=VSS}
-C {lab_wire.sym} 1240 -1590 0 0 {name=p186 sig_type=std_logic lab=div_1_LO_Q_m
-spice_ignore=true}
-C {lab_wire.sym} 1250 -1610 0 0 {name=p187 sig_type=std_logic lab=div_1_LO_Q_p
-spice_ignore=true}
-C {lab_wire.sym} 1470 -1230 0 0 {name=p188 sig_type=std_logic lab=div_1_LO_I_p}
-C {lab_wire.sym} 1470 -1250 0 0 {name=p189 sig_type=std_logic lab=div_1_LO_I_m}
-C {lab_wire.sym} 1460 -1590 0 0 {name=p190 sig_type=std_logic lab=div_1_LO_I_p}
-C {lab_wire.sym} 1460 -1570 0 0 {name=p191 sig_type=std_logic lab=div_1_LO_I_m}

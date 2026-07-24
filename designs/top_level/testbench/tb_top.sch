@@ -457,6 +457,10 @@ let vif_i = if_i_p - if_i_m
 let vif_q = if_q_p - if_q_m
 let vbb_i = bb_i_p - bb_i_m
 let vbb_q = bb_q_p - bb_q_m
+let v_lo_1_i = x1.div_1_lo_i_p-x1.div_1_lo_i_m
+let v_lo_1_q = x1.div_1_lo_q_p-x1.div_1_lo_q_m
+let v_lo_3_i = x1.div_3_lo_i_p-x1.div_3_lo_i_m
+let v_lo_3_q = x1.div_3_lo_q_p-x1.div_3_lo_q_m
 
 plot vrf   ;input signal
 plot vif_i vif_q xlimit 0 200n;output output
@@ -498,14 +502,15 @@ print i_buf_mix_4_m
 let i_blocks = i_mix_1+i_mix_2+i_mix_3+i_mix_4+i_buf_mix_1_p+i_buf_mix_1_m+i_buf_mix_2_p+i_buf_mix_2_m+i_buf_mix_3_p+i_buf_mix_3_m+i_buf_mix_4_p+i_buf_mix_4_m
 print i_vdd-i_blocks
 
-linearize vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m
-fft vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m 
+linearize vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m v_lo_1_i v_lo_1_q
+fft vrf vif_i vif_q vbb_i vbb_q v_lo_1 v_lo_1_off_chip x1.div_1_lo_i_p x1.div_1_lo_i_m v_lo_2 v_lo_2_off_chip x1.div_3_lo_i_p x1.div_3_lo_i_m v_lo_1_i v_lo_1_q
 
 ;plot db(vrf) xlimit 1 200Meg; input signal
 plot db(vrf) db(vif_i) db(vif_q) xlimit 1 200MEG; IF output
 plot db(vrf) db(vbb_i) db(vbb_q) xlimit 1 200MEG; BB output
 plot db(v_lo_1_off_chip) db(x1.div_1_lo_i_p) xlimit 1 200MEG;
 plot db(v_lo_2_off_chip) db(x1.div_3_lo_i_p) xlimit 1 200MEG;
+plot db(v_lo_1_i) db(v_lo_1_q); difference between I/Q LO 1 signal
 
 .endc
 "
